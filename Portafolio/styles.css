@@ -63,3 +63,27 @@ a {
 }
 
 
+/* Media Queries for responsiveness */
+@media only screen and (max-width: 600px) {
+  header {
+    padding: 10px;
+  }
+
+  section {
+    margin: 20px;
+    padding: 10px;
+  }
+
+  footer {
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  li {
+    display: block;
+    margin: 10px 0;
+  }
+}
