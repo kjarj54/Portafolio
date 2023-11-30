@@ -1,15 +1,17 @@
 body {
-  font-family: "Roboto", sans-serif; /* Changed font-family */
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 header {
-  background-color: #2c3e50; /* Changed header background color */
-  color: #ecf0f1; /* Changed text color */
+  background-color: #2c3e50;
+  color: #ecf0f1;
   text-align: center;
-  padding: 30px; /* Increased padding */
+  padding: 30px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 section {
@@ -17,7 +19,7 @@ section {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #ecf0f1; /* Lightened background color */
+  background-color: #ecf0f1;
 }
 
 footer {
@@ -32,7 +34,7 @@ footer {
 
 nav {
   background-color: #2c3e50;
-  padding: 15px; /* Adjusted padding */
+  padding: 15px;
   text-align: center;
 }
 
@@ -58,10 +60,6 @@ a {
   font-size: 16px;
 }
 
-#inicio {
-  background-color: #f5f5f5; /* Changed background color */
-}
-
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -79,36 +77,45 @@ a {
   margin: 0 10px;
 }
 
+.mainImage{
+  border-radius: 50%;
+}
+
+#inicio {
+  background-color: #f5f5f5;
+}
+
 #toggle-button {
-  background-color: #3498db; /* Color de fondo */
-  color: #fff; /* Color del texto */
-  border: none; /* Sin borde */
-  padding: 10px 20px; /* Relleno interno */
-  font-size: 16px; /* Tamaño del texto */
-  cursor: pointer; /* Cambia el cursor al pasar el ratón */
-
-  /* Efecto de transición para el cambio suave */
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px 10px 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px;
   transition: background-color 0.3s;
+  
 }
 
-/* Estilos para el hover */
 #toggle-button:hover {
-  background-color: #2980b9; /* Cambia el color de fondo al pasar el ratón */
+  background-color: #2980b9;
 }
 
-/* Estilos para el ícono dentro del botón */
 #toggle-button i {
-  margin-right: 8px; /* Espacio a la derecha del ícono */
+  margin-right: 8px;
 }
 
-/* Estilos para el ícono dentro del botón en hover */
 #toggle-button:hover i {
-  color: #ff0; /* Cambia el color del ícono al pasar el ratón */
+  color: #ff0;
 }
-/* Media Queries for responsiveness */
+
+
+
+
+/* Media Queries */
 @media only screen and (max-width: 600px) {
   header {
-    padding: 15px; /* Adjusted padding */
+    padding: 15px;
   }
 
   section {
@@ -117,7 +124,7 @@ a {
   }
 
   footer {
-    padding: 15px; /* Adjusted padding */
+    padding: 15px;
   }
 
   nav ul {
@@ -130,48 +137,50 @@ a {
   }
 }
 
-/* Dark mode */
+/********************************
+*********** DARK MODE ***********
+*********************************/
 
 body.dark-mode {
-  background-color: #06070E; /* Color de fondo oscuro */
-  color: #CAB6A9; /* Color del texto en modo oscuro */
+  background-color: #06070e;
+  color: #cab6a9;
 }
 
 header.dark-mode {
-  background-color: #6a1e3b; /* Color de fondo del encabezado en modo oscuro */
-  color: #e0bbcc; /* Color del texto en el encabezado en modo oscuro */
+  background-color: #6a1e3b;
+  color: #e0bbcc;
 }
 
 section.dark-mode {
-  background-color: #6a1e3b; /* Color de fondo de las secciones en modo oscuro */
-  color: #e0bbcc; /* Color del texto en las secciones en modo oscuro */
+  background-color: #6a1e3b;
+  color: #e0bbcc;
 }
 
 footer.dark-mode {
-  background-color: #6a1e3b; /* Color de fondo del pie de página en modo oscuro */
-  color: #e0bbcc; /* Color del texto en el pie de página en modo oscuro */
+  background-color: #6a1e3b;
+  color: #e0bbcc;
 }
 
 nav.dark-mode {
-  background-color: #6a1e3b; /* Color de fondo de la barra de navegación en modo oscuro */
-  color: #e0bbcc; /* Color del texto en la barra de navegación en modo oscuro */
+  background-color: #6a1e3b;
+  color: #e0bbcc;
 }
 
 ul.dark-mode {
-  background-color: #6a1e3b; /* Color de fondo de la lista en modo oscuro */
-  color: #e0bbcc; /* Color del texto en la lista en modo oscuro */
+  background-color: #6a1e3b;
+  color: #e0bbcc;
 }
 
 li.dark-mode {
-  background-color: #6a1e3b; /* Color de fondo de los elementos de lista en modo oscuro */
-  color: #e0bbcc; /* Color del texto de los elementos de lista en modo oscuro */
+  background-color: #6a1e3b;
+  color: #e0bbcc;
   display: inline;
   margin-right: 20px;
 }
 
 a.dark-mode {
-  background-color: #6a1e3b; /* Color de fondo de los enlaces en modo oscuro */
-  color: #e0bbcc; /* Color del texto de los enlaces en modo oscuro */
+  background-color: #6a1e3b;
+  color: #e0bbcc;
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
