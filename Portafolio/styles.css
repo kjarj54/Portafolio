@@ -79,6 +79,8 @@ a {
 
 .mainImage{
   border-radius: 50%;
+  width: 30%;
+  height: 50%;
 }
 
 #inicio {
