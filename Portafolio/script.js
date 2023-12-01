@@ -22,4 +22,30 @@ document.addEventListener("DOMContentLoaded", function () {
       targetSection.scrollIntoView({ behavior: "smooth" });
     });
   });
+
+  let lastScrollTop = 0;
+
+  window.addEventListener("scroll", () => {
+    const currentScrollTop =
+      window.pageYOffset || document.documentElement.scrollTop;
+    const backToTopButton = document.getElementById("back-to-top-button");
+
+    if (currentScrollTop > lastScrollTop) {
+      
+      document.getElementById("footer").classList.remove("hidden");
+      backToTopButton.style.display = "block";
+    } else {
+      
+      document.getElementById("footer").classList.add("hidden");
+      backToTopButton.style.display = "none";
+    }
+
+    lastScrollTop = currentScrollTop;
+  });
+
+  const backToTop = document.getElementById("back-to-top-button");
+  backToTop.addEventListener("click", () => {
+    e.preventDefault();
+    document.body.scrollIntoView({ block: "smooth", behavior: "start" });
+  });
 });
