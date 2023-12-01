@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const menuLinks = document.querySelectorAll("nav a");
   const toggleButton = document.getElementById("toggle-button"); // Agrega un botón de alternancia en tu HTML
-
+  document.getElementById("footer").classList.add("hidden");
+  
   toggleButton.addEventListener("click", function () {
     document.body.classList.toggle("dark-mode");
     var currentTheme = toggleButton.innerHTML;
@@ -31,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const backToTopButton = document.getElementById("back-to-top-button");
 
     if (currentScrollTop > lastScrollTop) {
-      
       document.getElementById("footer").classList.remove("hidden");
       backToTopButton.style.display = "block";
     } else {
