@@ -122,10 +122,58 @@ i.bi-envelope{
   display: none;
 }
 
+
 .back-to-top:hover {
   color: white; /* Change the hover color as needed */
 }
 
+.containerSkills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill:hover {
+  transform: scale(1.05);
+}
+
+.skill i {
+  font-size: 3em; 
+  color: #3498db; 
+}
+
+.skill .icon-container{
+  justify-content: center;
+  width: 100px;
+  height:px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.skill .icon-container img{
+  width: 100%;
+  height: auto;
+}
+
+.skill p {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.skill {
+  text-align: center;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ecf0f1;
+  transition: transform 0.3s;
+}
+
+#habilidades {
+  background-color: #f5f5f5;
+}
 
 #inicio {
   background-color: #f5f5f5;
