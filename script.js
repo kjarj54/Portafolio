@@ -3,6 +3,58 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggleButton = document.getElementById("toggle-button"); // Agrega un botón de alternancia en tu HTML
   document.getElementById("footer").classList.add("hidden");
 
+  async function getGitHubRepos() {
+    try {
+      const response = await fetch(
+        "https://api.github.com/users/kjarj54/repos"
+      );
+      const repos = await response.json();
+      return repos;
+    } catch (error) {
+      console.error("Error fetching GitHub repos:", error);
+      return [];
+    }
+  }
+
+  async function renderGitHubRepos() {
+    const proejctsContainer = document.querySelector(".repos-container");
+
+    const repos = await getGitHubRepos();
+
+    proejctsContainer.innerHTML = "";
+
+    repos.forEach((repo) => {
+      const projectItem = document.createElement("div");
+      projectItem.classList.add("project-item");
+
+      const projectTitle = document.createElement("h2");
+      projectTitle.textContent = repo.name;
+
+      const projectDescription = document.createElement("p");
+      projectDescription.textContent =
+        repo.description || "No description provided.";
+
+      const projectIconContainer = document.createElement("div");
+      projectIconContainer.classList.add("icons-container");
+
+      const githubLink = document.createElement("a");
+      githubLink.href = repo.html_url;
+      githubLink.target = "_blank";
+      const githubIcon = document.createElement("i");
+      githubIcon.classList.add("devicon-github-original");
+      githubLink.appendChild(githubIcon);
+
+      projectIconContainer.appendChild(githubLink);
+      projectItem.appendChild(projectTitle);
+      projectItem.appendChild(projectDescription);
+      projectItem.appendChild(projectIconContainer);
+
+      proejctsContainer.appendChild(projectItem);
+    });
+  }
+
+  renderGitHubRepos();
+
   toggleButton.addEventListener("click", function () {
     document.body.classList.toggle("dark-mode");
     var currentTheme = toggleButton.innerHTML;
