@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  async function renderGitHubRepos() {
+  /*async function renderGitHubRepos() {
     const proejctsContainer = document.querySelector(".repos-container");
 
     const repos = await getGitHubRepos();
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   renderGitHubRepos();
-
+*/
   toggleButton.addEventListener("click", function () {
     document.body.classList.toggle("dark-mode");
     var currentTheme = toggleButton.innerHTML;
