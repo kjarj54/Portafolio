@@ -18,7 +18,7 @@ Hi there! I'm Kevin Arauz, a passionate Software Engineer and FullStack Develope
 
 You can check out the live demo of the portfolio [here](https://kjarj54.github.io/Portafolio).
 
-![Portfolio Screenshot](screenshot.png)
+![Portfolio Screenshot](resources/screenshot.png)
 
 ## Features
 
