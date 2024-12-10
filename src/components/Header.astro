@@ -1,0 +1,21 @@
+---
+const socialLinks = [
+  { href: "https://github.com/kjarj54", icon: "bi-github", label: "GitHub" },
+  { href: "https://www.linkedin.com/in/arauzkj/", icon: "bi-linkedin", label: "LinkedIn" },
+  { href: "https://drive.google.com/file/d/1GMOP9ws9x6-NRHGbdkWaVY6qoH8dXy5E/view?usp=sharing", icon: "bi-file-person", label: "CV" },
+  { href: "https://stackoverflow.com/users/19321823/arauzkj", icon: "bi-stack-overflow", label: "Stack Overflow" },
+];
+---
+
+<header class="bg-gray-800 text-white text-center py-12 rounded-b-[50px]">
+  <img src="/Yo.jpg" alt="Profile image" class="w-32 h-32 rounded-full mx-auto mb-4" />
+  <h1 class="text-3xl font-bold mb-2">Kevin Arauz</h1>
+  <p class="mb-4">👾 Software Engineer | FullStack Developer</p>
+  <div class="flex justify-center space-x-4">
+    {socialLinks.map((link) => (
+      <a href={link.href} target="_blank" rel="noopener noreferrer" class="text-2xl hover:text-yellow-400 transition-colors" aria-label={link.label}>
+        <i class={`bi ${link.icon}`}></i>
+      </a>
+    ))}
+  </div>
+</header>

@@ -1,0 +1,36 @@
+---
+const skills = [
+  { name: "HTML5", icon: "devicon-html5-plain" },
+  { name: "CSS3", icon: "devicon-css3-plain" },
+  { name: "JavaScript", icon: "devicon-javascript-plain" },
+  { name: "Bootstrap", icon: "devicon-bootstrap-plain" },
+  { name: "GitHub", icon: "devicon-github-plain" },
+  { name: "Python", icon: "devicon-python-plain" },
+  { name: "C++", icon: "devicon-cplusplus-plain" },
+  { name: "C#", icon: "devicon-csharp-plain" },
+  { name: "Java", icon: "devicon-java-plain" },
+  { name: "Linux", icon: "devicon-linux-plain" },
+  { name: "Visual Studio", icon: "devicon-visualstudio-plain" },
+  { name: "Visual Studio Code", icon: "devicon-visualstudio-plain" },
+  { name: "Netbeans", icon: "/NetBeans.png" },
+  { name: "PL/SQL", icon: "/plsql.png" },
+];
+---
+
+<section id="habilidades" class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
+  <h2 class="text-2xl font-bold mb-6">Abilities</h2>
+  <p class="mb-4">I have experience in the following technologies:</p>
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+    {skills.map((skill) => (
+      <div class="flex flex-col items-center p-4 bg-gray-100 dark:bg-gray-700 rounded-lg transition-transform hover:scale-105">
+        {skill.icon.startsWith("devicon") ? (
+          <i class={`${skill.icon} text-4xl mb-2 text-blue-500`}></i>
+        ) : (
+          <img src={skill.icon} alt={skill.name} class="w-12 h-12 mb-2" />
+        )}
+        <p class="text-sm font-semibold">{skill.name}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
