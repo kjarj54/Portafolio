@@ -1,81 +1,89 @@
 ---
+import ProjectCard from './ProjectCard.astro';
+
 const projects = [
   {
     title: "Portafolio",
+    description: "A personal portfolio showcasing my skills and projects.",
     image: "/Portafolio.png",
+    tags: ["HTML5", "CSS3", "JavaScript"],
     github: "https://github.com/kjarj54/Portafolio",
     demo: ""
   },
   {
     title: "ClinicaUNA",
+    description: "A clinic management system for UNA.",
     image: "/Clinica UNA.png",
+    tags: ["Java", "Spring Boot", "MySQL"],
     github: "https://github.com/kjarj54/ClinicaUNA",
     demo: ""
   },
   {
     title: "CineUNA",
+    description: "A cinema booking system for UNA.",
     image: "/CineUNA.jpg",
+    tags: ["Java", "JavaFX", "SQLite"],
     github: "https://github.com/kjarj54/ProyectoCineUNA",
     demo: ""
   },
   {
     title: "kiosco_informativo",
+    description: "An informational kiosk system.",
     image: "/Kiosko Informativo.jpg",
+    tags: ["HTML5", "CSS3", "JavaScript"],
     github: "https://github.com/kjarj54/kiosco_informativo",
     demo: ""
   },
   {
     title: "25 + 5 Clock",
+    description: "A Pomodoro clock application.",
     image: "/PomodoroClock.png",
+    tags: ["React", "JavaScript", "CSS3"],
     github: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/25%20%2B%205%20Clock",
     demo: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/25%20+%205%20Clock/"
   },
   {
     title: "Drum Machine",
+    description: "A drum machine application.",
     image: "/Drum Machine.png",
+    tags: ["React", "JavaScript", "CSS3"],
     github: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/Drum%20Machine",
     demo: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/Drum%20Machine/"
   },
   {
     title: "JavaScript Calculator",
+    description: "A JavaScript calculator application.",
     image: "/JSCalculator.png",
+    tags: ["React", "JavaScript", "CSS3"],
     github: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/JavaScript%20Calculator",
     demo: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/JavaScript%20Calculator/"
   },
   {
     title: "Markdown Previewer",
+    description: "A Markdown previewer application.",
     image: "/Markdown Previewer.png",
+    tags: ["React", "JavaScript", "CSS3"],
     github: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/Markdown%20Previewer",
     demo: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/Markdown%20Previewer/"
   },
   {
     title: "Random Quote Machine",
+    description: "A random quote machine application.",
     image: "/Random Quote Machine.png",
+    tags: ["React", "JavaScript", "CSS3"],
     github: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/Random%20Quote%20Machine",
     demo: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/Random%20Quote%20Machine/"
-  }
+  },
 ];
 ---
 
-<section id="proyectos" class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
-  <h2 class="text-2xl font-bold mb-6">Projects</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {projects.map((project) => (
-      <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg transition-transform hover:scale-105">
-        <img src={project.image} alt={project.title} class="w-full h-40 object-cover rounded-t-lg mb-4" />
-        <h3 class="text-lg font-semibold mb-2">{project.title}</h3>
-        <div class="flex justify-between">
-          <a href={project.github} target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-700">
-            <i class="devicon-github-original"></i> GitHub
-          </a>
-          {project.demo && (
-            <a href={project.demo} target="_blank" rel="noopener noreferrer" class="text-green-500 hover:text-green-700">
-              <i class="bi bi-link-45deg"></i> Demo
-            </a>
-          )}
-        </div>
-      </div>
-    ))}
+<section id="projects" class="py-20 bg-white dark:bg-gray-800">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">My Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
   </div>
 </section>
-

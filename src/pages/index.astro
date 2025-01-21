@@ -1,45 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
 import Header from '../components/Header.astro';
-import Inicio from '../components/Inicio.astro';
 import Skills from '../components/Skills.astro';
-import Education from '../components/Education.astro';
-import Training from '../components/Training.astro';
 import Projects from '../components/Projects.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Kevin Arauz - Portfolio">
-  <Navbar />
+<Layout title="Kevin's Portfolio - Fullstack Developer">
   <Header />
-  <main class="container mx-auto px-4 py-8">
-    <Inicio />
+  <main>
+    <Hero />
+    <About />
     <Skills />
-    <Education />
-    <Training />
     <Projects />
+    <Contact />
   </main>
-  <footer class="bg-gray-800 text-white text-center py-4 fixed bottom-0 w-full">
-    <div class="flex justify-center items-center space-x-2">
-      <i class="bi bi-envelope"></i>
-      <p>Contacts: kjarj14@gmail.com</p>
-    </div>
-    <a href="#navBar" class="back-to-top fixed bottom-20 right-8 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition-colors">
-      <i class="bi bi-house"></i>
-    </a>
-  </footer>
+  <Footer />
 </Layout>
-
-<script>
-  const backToTopButton = document.querySelector('.back-to-top');
-  window.addEventListener('scroll', () => {
-    if (backToTopButton) {
-      if (window.scrollY > 300) {
-        backToTopButton.classList.remove('hidden');
-      } else {
-        backToTopButton.classList.add('hidden');
-      }
-    }
-  });
-</script>
 
