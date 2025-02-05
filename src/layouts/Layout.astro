@@ -18,12 +18,13 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ClientRouter />
-    <link href="node_modules/aos/dist/aos.css" rel="stylesheet" is:inline />
+    <link href="node_modules/aos/dist/aos.css" rel="stylesheet" />
   </head>
   <body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
     <slot />
     <script src="node_modules/aos/dist/aos.js" is:inline></script>
     <script>
+      import AOS from 'aos';
       AOS.init();
     </script>
   </body>
