@@ -6,16 +6,6 @@ const navItems = [
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
-let isOpen = false;
-
-function toggleMenu() {
-  isOpen = !isOpen;
-  const menu = document.getElementById('mobile-menu');
-  if (menu) {
-    menu.style.display = isOpen ? 'block' : 'none';
-  }
-  return "done";
-}
 ---
 
 <header
@@ -45,7 +35,7 @@ function toggleMenu() {
     </div>
 
     <!-- Mobile Menu Button -->
-    <button class="md:hidden focus:outline-none" onclick= {toggleMenu} >
+    <button id="menu-btn" class="md:hidden focus:outline-none">
       <svg class="h-8 w-8 text-gray-800 dark:text-white" viewBox="0 0 24 24">
         <path
           d="M4 6h16M4 12h16M4 18h16"
@@ -59,7 +49,9 @@ function toggleMenu() {
 
   <!-- Mobile Menu -->
   <div
-    class={`absolute top-16 left-0 w-full bg-white dark:bg-gray-900 shadow-md p-5 transition-all duration-300 ${isOpen ? "block" : "hidden"}`}
+    id="mobile-menu"
+    class="absolute top-16 left-0 w-full bg-white dark:bg-gray-900 shadow-md p-5
+  transform transition-transform duration-300 ease-in-out translate-x-full opacity-0"
   >
     {
       navItems.map((item) => (
@@ -72,4 +64,24 @@ function toggleMenu() {
       ))
     }
   </div>
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    let isOpen = false;
+
+    menuBtn?.addEventListener("click", () => {
+      isOpen = !isOpen;
+      if (mobileMenu) {
+        if (isOpen) {
+        // Opening animation
+        mobileMenu.classList.remove("translate-x-full", "opacity-0");
+        mobileMenu.classList.add("translate-x-0", "opacity-100");
+      } else {
+        // Closing animation
+        mobileMenu.classList.remove("translate-x-0", "opacity-100");
+        mobileMenu.classList.add("translate-x-full", "opacity-0");
+      }
+      }
+    });
+  </script>
 </header>
