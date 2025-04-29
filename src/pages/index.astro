@@ -1,6 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Training from '../components/Training.astro';
+import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 
 const description = "Welcome to Kevin's Portfolio. I'm a Fullstack Developer specializing in modern web technologies.";
@@ -9,16 +15,44 @@ const keywords = "Fullstack Developer, Web Development, JavaScript, React, Astro
 
 <Layout title="Kevin's Portfolio - Fullstack Developer" description={description}>
   <Header />
-  <main id="main-content" class=" flex flex-col items-center justify-center min-h-screen px-4">
-    <section class=" text-center max-w-3xl" data-aos="fade-up">
-      <h1 class=" text-4xl font-bold text-gray-800 dark:text-gray-100 sm:text-5xl">
-        Hi, I'm Kevin 👋
-      </h1>
-      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
-        A passionate Fullstack Developer crafting modern, efficient, and creative web applications.
-      </p>
-    </section>
+  
+  <main id="main-content">
+    <!-- Hero Section -->
+    <Hero />
+    
+    <!-- About Section -->
+    <About />
+    
+    <!-- Skills Section -->
+    <Skills />
+    
+    <!-- Projects Section -->
+    <Projects />
+    
+    <!-- Training Section -->
+    <Training />
+    
+    <!-- Contact Section -->
+    <Contact />
   </main>
 
   <Footer />
+  
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e: MouseEvent) => {
+        e.preventDefault();
+        const targetId = anchor.getAttribute('href');
+        if (targetId !== '#') {
+          const targetElement = targetId ? document.querySelector(targetId) : null;
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  </script>
 </Layout>
