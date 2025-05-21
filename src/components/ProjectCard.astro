@@ -28,9 +28,9 @@ const tagIcons = {
     <h3 class="text-xl font-semibold mb-2">{project.title}</h3>
     <p class="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
     <div class="flex flex-wrap gap-2 mb-4">
-      {project.tags.map((tag) => (
+      {project.tags.map((tag: string) => (
         <span class="flex items-center bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
-          <i class={`${tagIcons[tag]} mr-1`}></i> {tag}
+          <i class={`${tagIcons[tag as keyof typeof tagIcons] ?? ''} mr-1`}></i> {tag}
         </span>
       ))}
     </div>

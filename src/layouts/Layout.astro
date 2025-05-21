@@ -1,6 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import "devicon/devicon.min.css";
+import "aos/dist/aos.css";
 
 interface Props {
   title: string;
@@ -24,8 +25,8 @@ const { title, description = "Welcome to Kevin's Developer Portfolio", lang = "e
     <!-- Open Graph Meta Tags (for social media sharing) -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/preview.png" />
-    <meta property="og:url" content="https://your-portfoliod.com" />
+    <meta property="og:image" content="/favicon.svg" />
+    <meta property="og:url" content="https://arauzdev.netlify.app/" />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card Meta Tags -->
@@ -39,7 +40,6 @@ const { title, description = "Welcome to Kevin's Developer Portfolio", lang = "e
 
     <ClientRouter />
 
-    <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
   </head>
   <body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
     <slot />
