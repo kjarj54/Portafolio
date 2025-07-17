@@ -18,24 +18,88 @@ const { title, description = "Welcome to Kevin's Developer Portfolio", lang = "e
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="keywords" content="Developer, Portfolio, Web Development, Frontend, Backend, Programming" />
-    <meta name="author" content="Kevin" />
+    <meta name="keywords" content="Kevin Arauz, Full Stack Developer, Web Developer, Frontend Developer, Backend Developer, JavaScript, TypeScript, React, Node.js, Python, Portfolio, Software Engineer, Web Development Services, Programming, HTML, CSS, Astro, Tailwind CSS" />
+    <meta name="author" content="Kevin Arauz" />
     <meta name="robots" content="index, follow" />
+    <meta name="language" content={lang} />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="rating" content="General" />
+    <meta name="distribution" content="Global" />
+    <meta name="classification" content="Portfolio" />
+    <meta name="theme-color" content="#1f2937" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Kevin Arauz - Developer Portfolio" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://arauzdev.netlify.app/" />
     
     <!-- Open Graph Meta Tags (for social media sharing) -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/favicon.svg" />
+    <meta property="og:image" content="https://arauzdev.netlify.app/preview.png" />
     <meta property="og:url" content="https://arauzdev.netlify.app/" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Kevin Arauz - Developer Portfolio" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/preview.png" />
+    <meta name="twitter:image" content="https://arauzdev.netlify.app/preview.png" />
+    <meta name="twitter:creator" content="@kevinArauz" />
+    <meta name="twitter:site" content="@kevinArauz" />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" aria-hidden="true" />
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="mask-icon" href="/favicon.svg" color="#1f2937" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preconnect to improve performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://i.ibb.co" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kevin Arauz",
+        "jobTitle": "Full Stack Developer",
+        "url": "https://arauzdev.netlify.app/",
+        "sameAs": [
+          "https://github.com/kjarj54",
+          "https://linkedin.com/in/kevin-arauz"
+        ],
+        "knowsAbout": [
+          "Web Development",
+          "Frontend Development",
+          "Backend Development",
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Node.js",
+          "Python",
+          "Software Engineering"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance Developer"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Costa Rica"
+        }
+      }
+    </script>
+    
     <title>{title}</title>
 
     <ClientRouter />
@@ -46,7 +110,12 @@ const { title, description = "Welcome to Kevin's Developer Portfolio", lang = "e
     
     <script>
       import AOS from 'aos';
-      AOS.init({ duration: 800, easing: 'ease-in-out' });
+      AOS.init({ 
+        duration: 800, 
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
     </script>
   </body>
 </html>

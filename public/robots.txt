@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /_astro/
+
+# Sitemap
+Sitemap: https://arauzdev.netlify.app/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1

@@ -1,0 +1,18 @@
+{
+  "name": "Kevin Arauz - Full Stack Developer Portfolio",
+  "short_name": "Kevin Arauz",
+  "description": "Kevin Arauz - Full Stack Developer & Software Engineer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1f2937",
+  "theme_color": "#1f2937",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "en"
+}
