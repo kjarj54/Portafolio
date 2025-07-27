@@ -39,20 +39,6 @@ const keywords = "Kevin Arauz, Full Stack Developer, Web Developer, Software Eng
   <Footer />
   
   <script>
-    // Smooth scrolling for anchor links
-    document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', (e: MouseEvent) => {
-        e.preventDefault();
-        const targetId = anchor.getAttribute('href');
-        if (targetId !== '#') {
-          const targetElement = targetId ? document.querySelector(targetId) : null;
-          if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: 'smooth'
-            });
-          }
-        }
-      });
-    });
+    import '../scripts/smooth-scroll.ts';
   </script>
 </Layout>

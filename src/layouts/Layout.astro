@@ -110,13 +110,7 @@ const { title, description = "Welcome to Kevin's Developer Portfolio", lang = "e
     <slot />
     
     <script>
-      import AOS from 'aos';
-      AOS.init({ 
-        duration: 800, 
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false
-      });
+      import '../scripts/aos-init.ts';
     </script>
   </body>
 </html>
