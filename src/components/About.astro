@@ -1,26 +1,188 @@
-<section id="about" class="py-20 bg-white dark:bg-gray-800">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">About Kevin Arauz</h2>
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
-          <img src="https://i.ibb.co/MxpX66F0/Yo.jpg" alt="Kevin Arauz - Full Stack Developer" class="rounded-full w-64 h-64 mx-auto" />
+<section id="about" class="py-20 px-4 relative">
+  <!-- Section Transition -->
+  <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-900 via-slate-900/50 to-transparent"></div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="scroll-animation text-center mb-16" data-animation="fade-up">
+      <div class="text-center mb-16">
+        <h2 class="section-title">
+          About <span class="text-gradient">Kevin Arauz</span>
+        </h2>
+        <div class="section-divider"></div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="scroll-animation relative" data-animation="fade-right">
+        <div class="relative">
+          <div class="profile-container">
+            <div class="profile-image">
+              <img 
+                src="https://i.ibb.co/MxpX66F0/Yo.jpg" 
+                alt="Kevin Arauz - Full Stack Developer" 
+                class="w-full h-full object-cover rounded-full"
+              />
+              <div class="profile-ring"></div>
+              <div class="profile-ring-2"></div>
+            </div>
+          </div>
         </div>
-        <div class="md:w-1/2" data-aos="fade-left">
-          <p class="text-lg mb-6">
-            I'm Kevin Arauz, a systems engineering student and passionate full stack developer with expertise in creating innovative web solutions. 
-            My journey in programming started with a curiosity about how websites work, and it has evolved into a deep love for crafting efficient,
-            user-friendly applications using modern technologies like JavaScript, TypeScript, React, and Node.js.
-          </p>
-          <p class="text-lg mb-6">
-            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or
-            studying software architecture and best practices. I'm committed to continuous learning and staying up-to-date 
-            with the latest industry trends.
-          </p>
-          <p class="text-lg">
-            I'm excited to join a passionate team of professionals and contribute my enthusiasm and skills to the
-            development world! I'm always open to new connections and opportunities, so don't hesitate to contact me.
-          </p>
+      </div>
+
+      <div class="scroll-animation space-y-6" data-animation="fade-left">
+        <h3 class="text-3xl font-bold text-white mb-6 typing-animation">Passionate Full Stack Developer</h3>
+        <p class="text-gray-300 text-lg leading-relaxed">
+          I'm Kevin Arauz, a systems engineering student and passionate full stack developer with expertise in creating innovative web solutions. 
+          My journey in programming started with a curiosity about how websites work, and it has evolved into a deep love for crafting efficient,
+          user-friendly applications using modern technologies like JavaScript, TypeScript, React, and Node.js.
+        </p>
+        <p class="text-gray-300 text-lg leading-relaxed">
+          When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or
+          studying software architecture and best practices. I'm committed to continuous learning and staying up-to-date 
+          with the latest industry trends.
+        </p>
+        <p class="text-gray-300 text-lg leading-relaxed">
+          I'm excited to join a passionate team of professionals and contribute my enthusiasm and skills to the
+          development world! I'm always open to new connections and opportunities, so don't hesitate to contact me.
+        </p>
+
+        <div class="grid grid-cols-2 gap-6 mt-8">
+          <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Bottom Transition -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900/50 via-slate-900/30 to-transparent"></div>
 </section>
+
+<script>
+  import '../scripts/scroll-animation.ts';
+</script>
+
+<style>
+  /* Additional styles for the profile image integration */
+  .profile-image {
+    width: 16rem;
+    height: 16rem;
+    background: linear-gradient(to bottom right, #dc2626, #db2777);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    animation: profilePulse 3s ease-in-out infinite;
+  }
+
+  .profile-image img {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+  }
+
+  /* Enhanced typing animation for the title */
+  .typing-animation {
+    overflow: hidden;
+    border-right: 3px solid #800020;
+    white-space: nowrap;
+    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+    animation-delay: 0.5s;
+    width: 0;
+  }
+
+  .scroll-animation[data-animation="fade-left"] .typing-animation {
+    animation-delay: 1s;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #800020;
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .profile-container {
+      width: 16rem;
+      height: 16rem;
+    }
+    
+    .profile-image {
+      width: 12rem;
+      height: 12rem;
+    }
+
+    .typing-animation {
+      white-space: normal;
+      border-right: none;
+      animation: none;
+      width: auto;
+    }
+  }
+
+  /* Stat Cards */
+  .stat-card {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(248, 113, 113, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .stat-card:hover {
+    border-color: rgba(248, 113, 113, 0.4);
+    transform: scale(1.05);
+  }
+
+  .stat-number {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #f87171;
+    margin-bottom: 0.5rem;
+    animation: countUp 2s ease-out;
+  }
+
+  .stat-label {
+    color: #d1d5db;
+  }
+
+  /* Accessibility: Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-animation {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    
+    .typing-animation {
+      animation: none !important;
+      width: auto !important;
+      border-right: none !important;
+    }
+  }
+</style>
