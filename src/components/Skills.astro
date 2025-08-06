@@ -3,53 +3,53 @@ const skillCategories = [
   {
     title: "Frontend",
     skills: [
-      { name: "HTML5", icon: "devicon-html5-original" },
-      { name: "CSS3", icon: "devicon-css3-original" },
-      { name: "JavaScript", icon: "devicon-javascript-original" },
-      { name: "React", icon: "devicon-react-original" },
-      { name: "TypeScript", icon: "devicon-typescript-original" },
-      { name: "Tailwind", icon: "devicon-tailwindcss-original" },
-      { name: "Astro", icon: "devicon-astro-original" },
-      { name: "Vue.js", icon: "devicon-vuejs-original" },
+      { name: "HTML5", icon: "devicon-html5-plain" },
+      { name: "CSS3", icon: "devicon-css3-plain" },
+      { name: "JavaScript", icon: "devicon-javascript-plain" },
+      { name: "React", icon: "devicon-react-plain" },
+      { name: "TypeScript", icon: "devicon-typescript-plain" },
+      { name: "Tailwind", icon: "devicon-tailwindcss-plain" },
+      { name: "Astro", icon: "devicon-astro-plain" },
+      { name: "Kotlin", icon: "devicon-kotlin-plain" },
     ],
   },
   {
     title: "Backend",
     skills: [
-      { name: "Node.js", icon: "devicon-nodejs-original" },
-      { name: "Python", icon: "devicon-python-original" },
-      { name: "Express", icon: "devicon-express-original" },
+      { name: "Node.js", icon: "devicon-nodejs-plain" },
+      { name: "Python", icon: "devicon-python-plain" },
       { name: "Django", icon: "devicon-django-plain" },
-      { name: "FastAPI", icon: "devicon-fastapi-original" },
-      { name: "PHP", icon: "devicon-php-original" },
-      { name: "Java", icon: "devicon-java-original" },
-      { name: "C#", icon: "devicon-csharp-original" },
+      { name: "Java", icon: "devicon-java-plain" },
+      { name: "C#", icon: "devicon-csharp-plain" },
+      { name: "SpringBoot", icon: "devicon-spring-original" },
+      { name: "Express", icon: "devicon-express-original" },
+      { name: "NPM", icon: "devicon-npm-original-wordmark" },
+      { name: "Maven", icon: "devicon-maven-plain" },
     ],
   },
   {
     title: "Database & Cloud",
     skills: [
       { name: "MySQL", icon: "devicon-mysql-original" },
-      { name: "PostgreSQL", icon: "devicon-postgresql-original" },
-      { name: "MongoDB", icon: "devicon-mongodb-original" },
-      { name: "SQLite", icon: "devicon-sqlite-original" },
-      { name: "AWS", icon: "devicon-amazonwebservices-original" },
-      { name: "Docker", icon: "devicon-docker-original" },
-      { name: "Firebase", icon: "devicon-firebase-original" },
-      { name: "Redis", icon: "devicon-redis-original" },
+      { name: "PostgreSQL", icon: "devicon-postgresql-plain" },
+      { name: "MongoDB", icon: "devicon-mongodb-plain" },
+      { name: "SQLite", icon: "devicon-sqlite-plain" },
+      { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark" },
+      { name: "Docker", icon: "devicon-docker-plain" },
+      { name: "Firebase", icon: "devicon-firebase-plain" },
+      { name: "Azure", icon: "devicon-azure-plain" },
     ],
   },
   {
     title: "Tools & Others",
     skills: [
-      { name: "Git", icon: "devicon-git-original" },
+      { name: "Git", icon: "devicon-git-plain" },
       { name: "GitHub", icon: "devicon-github-original" },
-      { name: "VS Code", icon: "devicon-vscode-original" },
-      { name: "Figma", icon: "devicon-figma-original" },
-      { name: "Linux", icon: "devicon-linux-original" },
-      { name: "Postman", icon: "devicon-postman-original" },
-      { name: "NPM", icon: "devicon-npm-original-wordmark" },
-      { name: "Webpack", icon: "devicon-webpack-original" },
+      { name: "VS Code", icon: "devicon-vscode-plain" },
+      { name: "Figma", icon: "devicon-figma-plain" },
+      { name: "Linux", icon: "devicon-linux-plain" },
+      { name: "Postman", icon: "devicon-postman-plain" },
+      
     ],
   },
 ];
@@ -60,7 +60,10 @@ const skillCategories = [
   class="py-20 px-4 relative bg-gradient-to-b from-slate-900/30 via-slate-900/60 to-slate-900/30"
 >
   <!-- Top Transition -->
-  <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent via-slate-900/30 to-slate-900/60"></div>
+  <div
+    class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent via-slate-900/30 to-slate-900/60"
+  >
+  </div>
 
   <div class="max-w-6xl mx-auto relative z-10">
     <div class="scroll-animation text-center mb-16" data-animation="fade-up">
@@ -69,36 +72,42 @@ const skillCategories = [
       </h2>
       <div class="section-divider"></div>
       <p class="text-gray-300 text-lg max-w-2xl mx-auto mt-6">
-        A comprehensive toolkit of modern technologies and frameworks I use to build exceptional applications
+        A comprehensive toolkit of modern technologies and frameworks I use to
+        build exceptional applications
       </p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {skillCategories.map((category, categoryIndex) => (
-        <div 
-          class="scroll-animation skill-category-card" 
-          data-animation="fade-up" 
-          data-delay={categoryIndex * 100}
-        >
-          <h3 class="skill-category-title">{category.title}</h3>
-          <div class="grid grid-cols-2 gap-4">
-            {category.skills.map((skill, skillIndex) => (
-              <div 
-                class="skill-item" 
-                style={`animation-delay: ${skillIndex * 0.1}s`}
-              >
-                <i class={`${skill.icon} text-3xl mb-2 skill-icon`}></i>
-                <span class="skill-name">{skill.name}</span>
-              </div>
-            ))}
+      {
+        skillCategories.map((category, categoryIndex) => (
+          <div
+            class="scroll-animation skill-category-card"
+            data-animation="fade-up"
+            data-delay={categoryIndex * 100}
+          >
+            <h3 class="skill-category-title">{category.title}</h3>
+            <div class="grid grid-cols-2 gap-4">
+              {category.skills.map((skill, skillIndex) => (
+                <div
+                  class="skill-item"
+                  style={`animation-delay: ${skillIndex * 0.1}s`}
+                >
+                  <i class={`${skill.icon} text-3xl mb-2 skill-icon`} />
+                  <span class="skill-name">{skill.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 
   <!-- Bottom Transition -->
-  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-transparent via-slate-900/30 to-slate-900/60"></div>
+  <div
+    class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-transparent via-slate-900/30 to-slate-900/60"
+  >
+  </div>
 </section>
 
 <style>
@@ -160,5 +169,5 @@ const skillCategories = [
 </style>
 
 <script>
-  import '../scripts/scroll-animation.ts';
+  import "../scripts/scroll-animation.ts";
 </script>
