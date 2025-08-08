@@ -5,8 +5,14 @@ const projects = [
     description: "A modern, responsive portfolio website showcasing my skills and projects. Built with Astro for optimal performance and featuring smooth animations, dark mode support, and comprehensive project showcases.",
     image: "https://i.ibb.co/Y768tb7C/Portafolio.png",
     technologies: ["Astro", "TypeScript", "Tailwind CSS", "JavaScript"],
-    liveUrl: "https://kjarj54.github.io/Portafolio/",
-    githubUrl: "https://github.com/kjarj54/Portafolio",
+    liveUrl: {
+      frontend: "https://arauzdev.netlify.app/",
+      backend: ""
+    },
+    githubUrl: {
+      frontend: "https://github.com/kjarj54/Portafolio",
+      backend: ""
+    },
     featured: true,
   },
   {
@@ -14,8 +20,14 @@ const projects = [
     description: "Comprehensive clinic management system for Universidad Nacional de Costa Rica. Features patient management, appointment scheduling, medical records, and administrative dashboard with role-based access control.",
     image: "https://i.ibb.co/hRCcxyGx/Clinica-UNA.png",
     technologies: ["Java", "Spring Boot", "MySQL", "JSP", "Bootstrap"],
-    liveUrl: "",
-    githubUrl: "https://github.com/kjarj54/ClinicaUNA",
+    liveUrl: {
+      frontend: "https://example-frontend.com",
+      backend: "https://example-backend.com"
+    },
+    githubUrl: {
+      frontend: "https://github.com/kjarj54/ClinicaUNA-Frontend",
+      backend: "https://github.com/kjarj54/ClinicaUNA-Backend"
+    },
     featured: true,
   },
   {
@@ -23,8 +35,14 @@ const projects = [
     description: "Cinema booking and management system for UNA with JavaFX GUI. Includes movie scheduling, seat reservation, ticket sales, and comprehensive reporting features for cinema operations.",
     image: "https://i.ibb.co/KxHqkdbv/CineUNA.jpg",
     technologies: ["Java", "JavaFX", "SQLite", "Scene Builder"],
-    liveUrl: "",
-    githubUrl: "https://github.com/kjarj54/ProyectoCineUNA",
+    liveUrl: {
+      frontend: "",
+      backend: ""
+    },
+    githubUrl: {
+      frontend: "https://github.com/kjarj54/ProyectoCineUNA",
+      backend: ""
+    },
     featured: true,
   },
   {
@@ -32,8 +50,14 @@ const projects = [
     description: "Digital information kiosk system with touch-friendly interface. Provides interactive navigation, multimedia content display, and accessibility features for public information access.",
     image: "https://i.ibb.co/hRXsWFX5/Kiosko-Informativo.jpg",
     technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
-    liveUrl: "",
-    githubUrl: "https://github.com/kjarj54/kiosco_informativo",
+    liveUrl: {
+      frontend: "",
+      backend: ""
+    },
+    githubUrl: {
+      frontend: "https://github.com/kjarj54/kiosco_informativo",
+      backend: ""
+    },
     featured: false,
   },
   {
@@ -41,8 +65,14 @@ const projects = [
     description: "Productivity-focused Pomodoro technique timer with customizable work and break intervals. Features audio notifications, session tracking, and clean, distraction-free interface.",
     image: "https://i.ibb.co/8LcWLcDm/Pomodoro-Clock.png",
     technologies: ["React", "JavaScript", "CSS3", "HTML5"],
-    liveUrl: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/25%20+%205%20Clock/",
-    githubUrl: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/25%20%2B%205%20Clock",
+    liveUrl: {
+      frontend: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/25%20+%205%20Clock/",
+      backend: ""
+    },
+    githubUrl: {
+      frontend: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/25%20%2B%205%20Clock",
+      backend: ""
+    },
     featured: false,
   },
   {
@@ -50,8 +80,14 @@ const projects = [
     description: "Interactive drum machine web application with various drum kits and sound effects. Features keyboard shortcuts, volume control, and responsive design for music production practice.",
     image: "https://i.ibb.co/VcpGnbtp/Drum-Machine.png",
     technologies: ["React", "JavaScript", "CSS3", "Web Audio API"],
-    liveUrl: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/Drum%20Machine/",
-    githubUrl: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/Drum%20Machine",
+    liveUrl: {
+      frontend: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/Drum%20Machine/",
+      backend: ""
+    },
+    githubUrl: {
+      frontend: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/Drum%20Machine",
+      backend: ""
+    },
     featured: false,
   },
   {
@@ -59,8 +95,14 @@ const projects = [
     description: "Full-featured calculator web application with scientific functions, memory operations, and history tracking. Implements proper mathematical order of operations and error handling.",
     image: "https://i.ibb.co/bgXdj4h5/JSCalculator.png",
     technologies: ["React", "JavaScript", "CSS3", "Math.js"],
-    liveUrl: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/JavaScript%20Calculator/",
-    githubUrl: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/JavaScript%20Calculator",
+    liveUrl: {
+      frontend: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/JavaScript%20Calculator/",
+      backend: ""
+    },
+    githubUrl: {
+      frontend: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/JavaScript%20Calculator",
+      backend: ""
+    },
     featured: false,
   },
   {
@@ -68,8 +110,14 @@ const projects = [
     description: "Real-time Markdown editor and previewer with syntax highlighting, split-pane view, and export functionality. Supports GitHub-flavored Markdown and custom styling options.",
     image: "https://i.ibb.co/gYZB94c/Markdown-Previewer.png",
     technologies: ["React", "JavaScript", "Marked.js", "CSS3"],
-    liveUrl: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/Markdown%20Previewer/",
-    githubUrl: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/Markdown%20Previewer",
+    liveUrl: {
+      frontend: "https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/Markdown%20Previewer/",
+      backend: ""
+    },
+    githubUrl: {
+      frontend: "https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/Markdown%20Previewer",
+      backend: ""
+    },
     featured: false,
   },
 ];
@@ -106,22 +154,48 @@ const projects = [
               />
               <div class="project-overlay">
                 <div class="project-links">
-                  {project.liveUrl && (
-                    <a href={project.liveUrl} class="project-link primary" target="_blank" rel="noopener noreferrer">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                        <polyline points="15,3 21,3 21,9"/>
-                        <line x1="10" y1="14" x2="21" y2="3"/>
-                      </svg>
-                      Live Demo
-                    </a>
+                  {(project.liveUrl.frontend || project.liveUrl.backend) && (
+                    <div class="project-link-group">
+                      {project.liveUrl.frontend && (
+                        <a href={project.liveUrl.frontend} class="project-link primary" target="_blank" rel="noopener noreferrer">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15,3 21,3 21,9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                          </svg>
+                          {project.liveUrl.backend ? "Frontend" : "Live Demo"}
+                        </a>
+                      )}
+                      {project.liveUrl.backend && (
+                        <a href={project.liveUrl.backend} class="project-link primary" target="_blank" rel="noopener noreferrer">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15,3 21,3 21,9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                          </svg>
+                          Backend
+                        </a>
+                      )}
+                    </div>
                   )}
-                  <a href={project.githubUrl} class="project-link secondary" target="_blank" rel="noopener noreferrer">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    Code
-                  </a>
+                  <div class="project-link-group">
+                    {project.githubUrl.frontend && (
+                      <a href={project.githubUrl.frontend} class="project-link secondary" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        {project.githubUrl.backend ? "Frontend" : "Code"}
+                      </a>
+                    )}
+                    {project.githubUrl.backend && (
+                      <a href={project.githubUrl.backend} class="project-link secondary" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        Backend
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -142,22 +216,48 @@ const projects = [
             </div>
 
             <div class="project-actions">
-              {project.liveUrl && (
-                <a href={project.liveUrl} class="cta-button primary" target="_blank" rel="noopener noreferrer">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                    <polyline points="15,3 21,3 21,9"/>
-                    <line x1="10" y1="14" x2="21" y2="3"/>
-                  </svg>
-                  View Project
-                </a>
+              {(project.liveUrl.frontend || project.liveUrl.backend) && (
+                <div class="project-actions-group">
+                  {project.liveUrl.frontend && (
+                    <a href={project.liveUrl.frontend} class="cta-button primary" target="_blank" rel="noopener noreferrer">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15,3 21,3 21,9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                      </svg>
+                      {project.liveUrl.backend ? "View Frontend" : "View Project"}
+                    </a>
+                  )}
+                  {project.liveUrl.backend && (
+                    <a href={project.liveUrl.backend} class="cta-button primary" target="_blank" rel="noopener noreferrer">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15,3 21,3 21,9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                      </svg>
+                      View Backend
+                    </a>
+                  )}
+                </div>
               )}
-              <a href={project.githubUrl} class="cta-button secondary" target="_blank" rel="noopener noreferrer">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                Source Code
-              </a>
+              <div class="project-actions-group">
+                {project.githubUrl.frontend && (
+                  <a href={project.githubUrl.frontend} class="cta-button secondary" target="_blank" rel="noopener noreferrer">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    {project.githubUrl.backend ? "Frontend Code" : "Source Code"}
+                  </a>
+                )}
+                {project.githubUrl.backend && (
+                  <a href={project.githubUrl.backend} class="cta-button secondary" target="_blank" rel="noopener noreferrer">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    Backend Code
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -246,7 +346,14 @@ const projects = [
 
   .project-links {
     display: flex;
+    flex-direction: column;
     gap: 0.75rem;
+  }
+
+  .project-link-group {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
   }
 
   .project-link {
@@ -338,8 +445,14 @@ const projects = [
 
   .project-actions {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     padding-top: 1rem;
+  }
+
+  .project-actions-group {
+    display: flex;
+    gap: 1rem;
     flex-wrap: wrap;
   }
 
