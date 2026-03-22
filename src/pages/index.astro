@@ -1,41 +1,11 @@
 ---
+import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Skills from '../components/Skills.astro';
-import Projects from '../components/Projects.astro';
-import Training from '../components/Training.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
 
-const description = "Kevin Arauz - Full Stack Developer & Software Engineer. Specializing in modern web technologies including JavaScript, TypeScript, React, Node.js, and Python. View my portfolio and projects.";
-const keywords = "Kevin Arauz, Full Stack Developer, Web Developer, Software Engineer, JavaScript, TypeScript, React, Node.js, Python, Portfolio, Programming, Frontend, Backend";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Kevin Arauz - Full Stack Developer | Software Engineer Portfolio" description={description}>
-  <Header />
-  
-  <main id="main-content" class="bg-gradient-to-b from-slate-900 via-purple-900 to-slate-900 min-h-screen">
-    <!-- Hero Section -->
-    <Hero />
-    
-    <!-- About Section -->
-    <About />
-    
-    <!-- Skills Section -->
-    <Skills />
-    
-    <!-- Projects Section -->
-    <Projects />
-    
-    <!-- Training Section -->
-    <Training />
-    
-    <!-- Contact Section -->
-    <Contact />
-  </main>
-
-  <Footer />
-
+<Layout>
+	<Welcome />
 </Layout>
