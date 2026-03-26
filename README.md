@@ -88,28 +88,38 @@ The built site will be in the `dist/` folder.
 /
 ├── public/
 │   ├── favicon.svg
-│   └── placeholder.svg
+│   ├── placeholder.svg
+│   └── robots.txt
 ├── src/
+│   ├── assets/
 │   ├── components/
-│   │   ├── About.astro
-│   │   ├── Contact.astro
-│   │   ├── Footer.astro
-│   │   ├── Header.astro
-│   │   ├── Hero.astro
-│   │   ├── ProjectCard.astro
-│   │   ├── Projects.astro
-│   │   ├── Skills.astro
-│   │   └── Training.astro
+│   │   └── SEO.astro
+│   ├── db/
+│   │   ├── index.ts
+│   │   ├── loader.ts
+│   │   └── schema.ts
 │   ├── layouts/
+│   │   ├── BlogPost.astro
 │   │   └── Layout.astro
 │   ├── pages/
-│   │   └── index.astro
-│   └── assets/
+│   │   ├── index.astro
+│   │   └── blog/
+│   │       ├── index.astro
+│   │       └── [slug].astro
+│   ├── styles/
+│   │   └── global.css
+│   └── content.config.ts
 ├── astro.config.mjs
-├── tailwind.config.mjs
+├── drizzle.config.ts
 ├── tsconfig.json
 └── package.json
 ```
+
+This layout follows Astro conventions:
+- `src/pages` defines routes (required by Astro).
+- `src/components`, `src/layouts`, and `src/styles` follow common Astro structure.
+- `public` stores static files served as-is.
+- `src/content.config.ts` defines content collections (using a custom DB loader in this project).
 
 ## 🤝 Contributing
 

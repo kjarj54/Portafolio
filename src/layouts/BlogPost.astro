@@ -1,18 +1,104 @@
 ---
-const { title, description, publishedDate, image, author } = Astro.props;
+const { post } = Astro.props;
+import type { Post } from "../db/schema";
+import SEO from "../components/SEO.astro";
+interface Props {
+  post: Post;
+}
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": title,
-  "description": description,
-  "image": new URL(image, Astro.site).href,
-  "author": {
-    "@type": "Person",
-    "name": author
-  },
-  "datePublished": publishedDate,
-  "url": Astro.url.href
-};
+const formattedDate = post.publishedAt
+  ? new Date(post.publishedAt).toLocaleDateString("es-CR", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : null;
+
+const readingTime = Math.ceil((post.content?.length ?? 0) / 1500);
 ---
-<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <SEO
+      title={post.title}
+      description={post.description}
+      image={post.coverImage ?? "/og-default.png"}
+      type="article"
+      publishedDate={post.publishedAt?.toISOString()}
+    />
+
+    <!-- JSON-LD para Google -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.description,
+        image: new URL(post.coverImage ?? "/og-default.png", Astro.site).href,
+        author: {
+          "@type": "Person",
+          name: "Tu Nombre",
+          url: Astro.site,
+        },
+        datePublished: post.publishedAt?.toISOString(),
+        dateModified: post.updatedAt?.toISOString(),
+        url: Astro.url.href,
+        keywords: post.tags?.join(", "),
+      })}
+    />
+  </head>
+  <body>
+    <main>
+      <article>
+
+        <!-- Header del post -->
+        <header>
+          {post.coverImage && (
+            <img src={post.coverImage} alt={post.title} />
+          )}
+
+          <div>
+            {post.tags && post.tags.length > 0 && (
+              <ul>
+                {post.tags.map(tag => (
+                  <li>
+                    <a href={`/blog/tags/${tag}`}>#{tag}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          <h1>{post.title}</h1>
+          <p>{post.description}</p>
+
+          <div>
+            {formattedDate && (
+              <time datetime={post.publishedAt?.toISOString()}>
+                {formattedDate}
+              </time>
+            )}
+            <span>{readingTime} min de lectura</span>
+          </div>
+        </header>
+
+        <!-- Contenido del post (el <Content /> de Astro va aquí) -->
+        <div class="prose">
+          <slot />
+        </div>
+
+        <!-- Footer del post -->
+        <footer>
+          <a href="/blog">← Volver al blog</a>
+        </footer>
+
+      </article>
+    </main>
+  </body>
+</html>

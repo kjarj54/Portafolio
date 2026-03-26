@@ -1,9 +1,9 @@
 ---
-export const prerender = true;
 import { getCollection, render } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
   return posts.map(post => ({
     params: { slug: post.id },
     props: { post },
@@ -11,10 +11,24 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post); // ← Astro parsea el Markdown nativo
+const { Content } = await render(post);
+
+// Adaptamos los datos al formato que espera BlogPost.astro
+const postData = {
+  id:          0, // or use post.data.id if available
+  slug:        post.id,
+  title:       post.data.title,
+  description: post.data.description,
+  coverImage:  post.data.coverImage ?? null,
+  tags:        post.data.tags,
+  publishedAt: post.data.publishedAt,
+  published:   !(post.data.draft ?? false),
+  createdAt:   post.data.createdAt ?? null,
+  updatedAt:   post.data.updatedAt ?? null,
+  content:     post.body ?? '', // solo para el reading time
+};
 ---
 
-<article>
-  <h1>{post.data.title}</h1>
-  <Content />  <!-- sin marked, sin dependencias extra -->
-</article>
+<BlogPost post={postData}>
+  <Content />
+</BlogPost>
