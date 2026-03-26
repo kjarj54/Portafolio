@@ -15,8 +15,10 @@
     "@astrojs/netlify": "^7.0.4",
     "@astrojs/sitemap": "^3.7.1",
     "@libsql/client": "^0.17.2",
+    "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.0.8",
-    "drizzle-orm": "^0.45.1"
+    "drizzle-orm": "^0.45.1",
+    "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
     "drizzle-kit": "^0.31.10"
