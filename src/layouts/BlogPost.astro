@@ -1,9 +1,23 @@
 ---
 const { post } = Astro.props;
-import type { Post } from "../db/schema";
 import SEO from "../components/SEO.astro";
+
+type BlogLayoutPost = {
+  id?: number;
+  slug: string;
+  title: string;
+  description: string;
+  coverImage?: string | null;
+  tags?: string[];
+  publishedAt?: Date | null;
+  published?: boolean;
+  createdAt?: Date | null;
+  updatedAt?: Date | null;
+  content?: string;
+};
+
 interface Props {
-  post: Post;
+  post: BlogLayoutPost;
 }
 
 const formattedDate = post.publishedAt

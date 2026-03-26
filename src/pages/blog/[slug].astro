@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
+export const prerender = true;
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -15,7 +16,7 @@ const { Content } = await render(post);
 
 // Adaptamos los datos al formato que espera BlogPost.astro
 const postData = {
-  id:          0, // or use post.data.id if available
+  id:          0,
   slug:        post.id,
   title:       post.data.title,
   description: post.data.description,
