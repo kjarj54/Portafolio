@@ -1,4 +1,6 @@
 ---
+import { getAlternateLinks, getLangFromUrl, type Lang } from '../i18n/utils';
+import { ui, defaultLang } from '../i18n/ui';
 interface Props{
     title: string;
     description: string;
@@ -22,6 +24,8 @@ const {
 const siteName = 'Keviin Arauz | Portfolio & Blog';
 const fullTitle = `${title} | ${siteName}`;
 const absoluteImage = new URL(image, Astro.site).href;
+const lang = getLangFromUrl(Astro.url);
+
 ---
 
 <title>{fullTitle}</title>

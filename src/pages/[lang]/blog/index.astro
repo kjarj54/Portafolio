@@ -1,15 +1,18 @@
 ---
 import { getCollection } from 'astro:content';
 
+const { lang } = Astro.params;
+
 const posts = await getCollection('blog', ({ data }) => !data.draft);
-const sorted = posts.sort((a, b) =>
+const localizedPosts = posts.filter((post) => post.id.startsWith(`${lang}/`));
+const sorted = localizedPosts.sort((a, b) =>
   (b.data.publishedAt?.valueOf() ?? 0) - (a.data.publishedAt?.valueOf() ?? 0)
 );
 ---
 
 {sorted.map(post => (
   <article>
-    <a href={`/blog/${post.id}`}>{post.data.title}</a>
+    <a href={`/${lang}/blog/${post.id.split('/').pop()}`}>{post.data.title}</a>
     <p>{post.data.description}</p>
     <time>{post.data.publishedAt?.toLocaleDateString('es-CR')}</time>
   </article>

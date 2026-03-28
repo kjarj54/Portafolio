@@ -29,6 +29,8 @@ const formattedDate = post.publishedAt
   : null;
 
 const readingTime = Math.ceil((post.content?.length ?? 0) / 1500);
+const [, langSegment] = Astro.url.pathname.split('/');
+const blogIndexHref = langSegment ? `/${langSegment}/blog` : '/blog';
 ---
 
 <!doctype html>
@@ -109,7 +111,7 @@ const readingTime = Math.ceil((post.content?.length ?? 0) / 1500);
 
         <!-- Footer del post -->
         <footer>
-          <a href="/blog">← Volver al blog</a>
+          <a href={blogIndexHref}>← Volver al blog</a>
         </footer>
 
       </article>

@@ -1,0 +1,29 @@
+---
+import { languages } from "../i18n/ui";
+import {
+  getLangFromUrl,
+  useTranslatedPath,
+  getRouteFromUrl,
+} from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const route = getRouteFromUrl(Astro.url);
+---
+
+<ul class="lang-picker">
+  {
+    Object.entries(languages).map(([l, label]) => {
+      const translatePath = useTranslatedPath(l as any);
+      return (
+        <li>
+          <a
+            href={translatePath(`/${route ?? ""}`)}
+            aria-current={l === lang ? "true" : undefined}
+            hreflang={l}
+          >
+            {label}
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

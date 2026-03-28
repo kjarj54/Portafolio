@@ -14,9 +14,11 @@
   "dependencies": {
     "@astrojs/netlify": "^7.0.4",
     "@astrojs/sitemap": "^3.7.1",
+    "@better-auth/drizzle-adapter": "^1.5.6",
     "@libsql/client": "^0.17.2",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.0.8",
+    "better-auth": "^1.5.6",
     "drizzle-orm": "^0.45.1",
     "tailwindcss": "^4.2.2"
   },

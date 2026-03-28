@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { languages } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang as any);
+export const prerender = true;
+---
+
+<Layout title="Landing Page" description="Welcome to our website">
+  <h1 class="text-3xl font-bold underline">{t('home.hero')}</h1>
+</Layout>
