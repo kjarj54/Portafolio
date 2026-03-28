@@ -1,6 +1,6 @@
 import { defineMiddleware } from "astro:middleware";
-import { defaultLang, languages } from "./i18n/ui";
-import { auth } from "./lib/auth";
+import { defaultLang, languages } from "@i18n/ui";
+import { auth } from "@lib/auth";
 
 const supportedLangs = Object.keys(languages);
 
