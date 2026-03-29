@@ -1,0 +1,78 @@
+---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const skills = [
+  'JavaScript (ES6+)',
+  'TypeScript',
+  'React',
+  'Next.js',
+  'Node.js',
+  'Python',
+  'PostgreSQL',
+  'Tailwind CSS',
+];
+---
+
+<section id="about" class="py-24 md:py-32 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="reveal">
+      <h2 class="flex items-center gap-4 text-2xl md:text-3xl font-bold text-foreground mb-12">
+        <span class="font-mono text-primary text-lg md:text-xl">01.</span>
+        {t('about.title')}
+        <span class="flex-1 h-px bg-border max-w-xs"></span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-12">
+      <div class="md:col-span-2 space-y-4 reveal reveal-delay-1">
+        <p class="text-muted-foreground leading-relaxed">
+          {t('about.paragraph1')} <span class="text-foreground font-medium">{t('about.paragraph1Name')}</span> {t('about.paragraph1Rest')}
+        </p>
+        
+        <p class="text-muted-foreground leading-relaxed">
+          {t('about.paragraph2')}
+          <a href="#" class="text-primary hover:underline underline-offset-4">{t('about.company1')}</a>,
+          <a href="#" class="text-primary hover:underline underline-offset-4">{t('about.company2')}</a>, y
+          <a href="#" class="text-primary hover:underline underline-offset-4">{t('about.company3')}</a>. 
+          {t('about.paragraph2Rest')}
+        </p>
+
+        <p class="text-muted-foreground leading-relaxed">
+          {t('about.techTitle')}
+        </p>
+
+        <ul class="grid grid-cols-2 gap-2 mt-6">
+          {skills.map((skill, index) => (
+            <li 
+              class="flex items-center gap-2 text-sm text-muted-foreground reveal"
+              style={`transition-delay: ${200 + index * 50}ms;`}
+            >
+              <span class="text-primary text-xs">▹</span>
+              <span class="font-mono">{skill}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="relative group reveal reveal-delay-3">
+        <div class="relative aspect-square rounded-lg overflow-hidden">
+          <!-- Placeholder for profile image -->
+          <div class="absolute inset-0 bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+            <div class="w-32 h-32 rounded-full bg-primary/20 flex items-center justify-center">
+              <span class="text-4xl font-bold text-primary">TN</span>
+            </div>
+          </div>
+          
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300"></div>
+        </div>
+        
+        <!-- Decorative border -->
+        <div class="absolute top-4 left-4 w-full h-full border-2 border-primary rounded-lg -z-10 group-hover:top-2 group-hover:left-2 transition-all duration-300"></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -2,6 +2,12 @@
 import Layout from "@layouts/Layout.astro";
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import { languages } from "@i18n/ui";
+import Header from "@landing/Header.astro";
+import SocialSideBar from "@landing/SocialSideBar.astro";
+import Footer from "@landing/Footer.astro";
+import Contact from "@landing/Contact.astro";
+import About from "@landing/About.astro";
+import Hero from "@landing/Hero.astro";
 
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({ params: { lang } }));
@@ -9,9 +15,17 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const t = useTranslations(lang as any);
-export const prerender = true;
+export const prerender = false;
 ---
 
-<Layout title="Landing Page" description="Welcome to our website">
-  <h1 class="text-3xl font-bold underline">{t('home.hero')}</h1>
+<Layout title={t('site.title')} description={t('site.description')}>
+  <Header />
+  <SocialSideBar />
+
+  <main>
+    <Hero />
+    <About />
+    <Contact />
+  </main>
+  <Footer />
 </Layout>

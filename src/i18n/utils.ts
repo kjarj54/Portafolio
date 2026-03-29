@@ -1,6 +1,7 @@
 import { ui, defaultLang, showDefaultLang, routes } from './ui';
 
 export type Lang = keyof typeof ui;
+type TranslationKey = keyof (typeof ui)[typeof defaultLang];
 
 /** Detecta el idioma desde la URL */
 export function getLangFromUrl(url: URL): Lang {
@@ -10,9 +11,13 @@ export function getLangFromUrl(url: URL): Lang {
 }
 
 /** Devuelve la función t() para obtener traducciones */
-export function useTranslations(lang: Lang) {
-  return function t(key: keyof (typeof ui)[typeof defaultLang]): string {
-    return (ui[lang] as Record<string, string>)[key] ?? ui[defaultLang][key];
+export function useTranslations(lang: string) {
+  const fallback = ui[defaultLang] as Record<TranslationKey, string>;
+  const current =
+    (ui as Record<string, Partial<Record<TranslationKey, string>>>)[lang] ?? fallback;
+
+  return function t(key: TranslationKey): string {
+    return current[key] ?? fallback[key];
   };
 }
 
@@ -41,7 +46,6 @@ export function getRouteFromUrl(url: URL): string | undefined {
   const parts = pathname.split('/');
   const path = parts.pop() || parts.pop();
   if (!path) return undefined;
-
   const currentLang = getLangFromUrl(url);
 
   if (defaultLang === currentLang) {

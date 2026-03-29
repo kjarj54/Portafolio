@@ -1,0 +1,29 @@
+---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+---
+
+<section id="contact" class="py-24 md:py-32 px-6">
+  <div class="max-w-2xl mx-auto text-center">
+    <div class="reveal">
+      <p class="font-mono text-primary text-sm mb-4">{t('contact.kicker')}</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        {t('contact.title')}
+      </h2>
+    </div>
+
+    <p class="text-muted-foreground leading-relaxed mb-12 reveal reveal-delay-1">
+      {t('contact.description')}
+    </p>
+
+    <a
+      href="mailto:kjarj14@gmail.com"
+      class="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium text-primary border border-primary rounded hover:bg-primary/10 transition-all duration-300 reveal reveal-delay-2"
+    >
+      {t('contact.cta')}
+    </a>
+  </div>
+</section>

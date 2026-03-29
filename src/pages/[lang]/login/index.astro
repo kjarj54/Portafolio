@@ -1,0 +1,16 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+const { lang = "es" } = Astro.params;
+---
+
+<Layout title="Login" description="Acceso a la cuenta">
+  <main class="min-h-screen flex items-center justify-center px-6">
+    <section class="w-full max-w-md rounded-lg border border-border bg-card p-8">
+      <h1 class="text-2xl font-bold text-foreground">Iniciar sesion</h1>
+      <p class="mt-2 text-sm text-muted-foreground">
+        Ruta activa para idioma: <span class="text-primary">{lang}</span>
+      </p>
+    </section>
+  </main>
+</Layout>

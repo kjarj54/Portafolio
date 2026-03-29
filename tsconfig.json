@@ -6,7 +6,9 @@
     "paths": {
       "@lib/*": ["./src/lib/*"],
       "@layouts/*": ["./src/layouts/*"],
-      "@i18n/*": ["./src/i18n/*"]
+      "@i18n/*": ["./src/i18n/*"],
+      "@components/*": ["./src/components/*"],
+      "@landing/*": ["./src/components/landingpage/*"],
     }
   }
 }
