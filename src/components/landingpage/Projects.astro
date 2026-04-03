@@ -1,70 +1,76 @@
 ---
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const tr = (key: string) => t(key as any);
+const translatePath = useTranslatedPath(lang);
 
 const featuredProjects = [
   {
-    title: tr('projects.featured.1.title'),
-    description: tr('projects.featured.1.description'),
-    technologies: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'Tailwind'],
-    github: '#',
-    external: '#',
+    title: t('projects.featured.1.title'),
+    description: t('projects.featured.1.description'),
+    image: 'https://i.ibb.co/Y768tb7C/Portafolio.png',
+    technologies: ['Astro', 'TypeScript', 'Tailwind CSS', 'JavaScript'],
+    github: 'https://github.com/kjarj54/Portafolio',
+    external: 'https://arauzdev.netlify.app/',
   },
   {
-    title: tr('projects.featured.2.title'),
-    description: tr('projects.featured.2.description'),
-    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Redux'],
-    github: '#',
-    external: '#',
+    title: t('projects.featured.2.title'),
+    description: t('projects.featured.2.description'),
+    image: 'https://i.ibb.co/Wr7zvfY/Draw-Together.png',
+    technologies: ['React', 'TypeScript', 'WebSockets'],
+    github: 'https://github.com/kjarj54/DrawTogether-FrontEnd',
+    external: 'https://kjarj54.github.io/DrawTogether-FrontEnd/',
   },
   {
-    title: tr('projects.featured.3.title'),
-    description: tr('projects.featured.3.description'),
-    technologies: ['Vue.js', 'D3.js', 'Python', 'FastAPI', 'PostgreSQL'],
-    github: '#',
+    title: t('projects.featured.3.title'),
+    description: t('projects.featured.3.description'),
+    image: 'https://i.ibb.co/d4bzHpXk/QRNav.png',
+    technologies: ['Flutter', 'Dart', 'Mobile'],
+    github: 'https://github.com/kjarj54/QRNav',
     external: '#',
   },
 ];
 
 const otherProjects = [
   {
-    title: tr('projects.other.1.title'),
-    description: tr('projects.other.1.description'),
-    technologies: ['Node.js', 'TypeScript', 'API REST'],
-    github: '#',
+    title: t('projects.other.1.title'),
+    description: t('projects.other.1.description'),
+    technologies: ['Java', 'Spring Boot', 'MySQL', 'JSP', 'Bootstrap'],
+    github: 'https://github.com/kjarj54/ClinicaUNA-Frontend',
   },
   {
-    title: tr('projects.other.2.title'),
-    description: tr('projects.other.2.description'),
-    technologies: ['HTML', 'CSS', 'JavaScript'],
-    github: '#',
+    title: t('projects.other.2.title'),
+    description: t('projects.other.2.description'),
+    technologies: ['Java', 'JavaFX', 'SQLite', 'Scene Builder'],
+    github: 'https://github.com/kjarj54/ProyectoCineUNA',
   },
   {
-    title: tr('projects.other.3.title'),
-    description: tr('projects.other.3.description'),
-    technologies: ['Astro', 'MDX', 'Tailwind'],
-    github: '#',
+    title: t('projects.other.3.title'),
+    description: t('projects.other.3.description'),
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+    github: 'https://github.com/kjarj54/kiosco_informativo',
   },
   {
-    title: tr('projects.other.4.title'),
-    description: tr('projects.other.4.description'),
-    technologies: ['JavaScript', 'Chrome API', 'HTML/CSS'],
-    github: '#',
+    title: t('projects.other.4.title'),
+    description: t('projects.other.4.description'),
+    technologies: ['React', 'JavaScript', 'CSS3', 'HTML5'],
+    github:
+      'https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/25%20%2B%205%20Clock',
   },
   {
-    title: tr('projects.other.5.title'),
-    description: tr('projects.other.5.description'),
-    technologies: ['Express', 'MongoDB', 'JWT', 'Swagger'],
-    github: '#',
+    title: t('projects.other.5.title'),
+    description: t('projects.other.5.description'),
+    technologies: ['React', 'JavaScript', 'CSS3', 'Web Audio API'],
+    github:
+      'https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/Drum%20Machine',
   },
   {
-    title: tr('projects.other.6.title'),
-    description: tr('projects.other.6.description'),
-    technologies: ['React Native', 'Expo', 'Firebase'],
-    github: '#',
+    title: t('projects.other.6.title'),
+    description: t('projects.other.6.description'),
+    technologies: ['React', 'JavaScript', 'CSS3', 'Math.js'],
+    github:
+      'https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/JavaScript%20Calculator',
   },
 ];
 ---
@@ -74,7 +80,7 @@ const otherProjects = [
     <div class="reveal">
       <h2 class="flex items-center gap-4 text-2xl md:text-3xl font-bold text-foreground mb-12">
         <span class="font-mono text-primary text-lg md:text-xl">03.</span>
-        {tr('projects.title')}
+        {t('projects.title')}
         <span class="flex-1 h-px bg-border max-w-xs"></span>
       </h2>
     </div>
@@ -86,13 +92,16 @@ const otherProjects = [
           class={`relative grid md:grid-cols-12 gap-4 items-center reveal`}
           style={`transition-delay: ${100 + index * 100}ms;`}
         >
-          <!-- Project image placeholder -->
+          <!-- Project image -->
           <div class={`md:col-span-7 aspect-video bg-secondary rounded-lg overflow-hidden ${
             index % 2 === 0 ? 'md:order-1' : 'md:order-2'
           }`}>
-            <div class="w-full h-full bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-              <span class="font-mono text-primary/50 text-sm">proyecto-{index + 1}.jpg</span>
-            </div>
+            <img
+              src={project.image}
+              alt={project.title}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
 
           <!-- Project info -->
@@ -101,7 +110,7 @@ const otherProjects = [
               ? 'md:order-2 md:text-right' 
               : 'md:order-1 md:text-left'
           }`}>
-            <p class="font-mono text-primary text-sm mb-2">{tr('projects.featuredLabel')}</p>
+            <p class="font-mono text-primary text-sm mb-2">{t('projects.featuredLabel')}</p>
             <h3 class="text-2xl font-bold text-foreground mb-4">{project.title}</h3>
             
             <div class="bg-card p-6 rounded-lg shadow-lg mb-4 relative z-10 md:-mx-8">
@@ -126,7 +135,7 @@ const otherProjects = [
               <a 
                 href={project.github}
                 class="text-foreground hover:text-primary transition-colors"
-                aria-label={tr('projects.aria.github')}
+                aria-label={t('projects.aria.github')}
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
@@ -135,7 +144,7 @@ const otherProjects = [
               <a 
                 href={project.external}
                 class="text-foreground hover:text-primary transition-colors"
-                aria-label={tr('projects.aria.live')}
+                aria-label={t('projects.aria.live')}
               >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -149,9 +158,9 @@ const otherProjects = [
 
     <!-- Other Projects -->
     <div class="text-center mb-12 reveal">
-      <h3 class="text-xl font-bold text-foreground">{tr('projects.otherTitle')}</h3>
-      <a href="#" class="inline-block mt-2 font-mono text-sm text-primary hover:underline underline-offset-4">
-        {tr('projects.archiveLink')}
+      <h3 class="text-xl font-bold text-foreground">{t('projects.otherTitle')}</h3>
+      <a href={translatePath('/projects')} class="inline-block mt-2 font-mono text-sm text-primary hover:underline underline-offset-4">
+        {t('projects.archiveLink')}
       </a>
     </div>
 
@@ -168,7 +177,7 @@ const otherProjects = [
             <a 
               href={project.github}
               class="text-muted-foreground hover:text-primary transition-colors"
-              aria-label={tr('projects.aria.github')}
+              aria-label={t('projects.aria.github')}
             >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />

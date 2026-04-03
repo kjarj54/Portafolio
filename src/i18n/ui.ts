@@ -26,7 +26,7 @@ export const ui = {
     "hero.title": "Construyo experiencias digitales",
     "hero.description":
       "Soy desarrollador full stack, tengo conocimientos de backend y frontend, gracias a mi conocimiento y experiencia, puedo desarrollar productos a la medida segun el cliente lo requiera. Actualmente me enfoco en construir productos accesibles, centrados en el usuario",
-    "hero.company": "Proyecto Freelance",
+    "hero.company": "Global Busines System (GBSYS)",
     "hero.projects": "Ver mis proyectos",
     "hero.contact": "Contáctame",
     "hero.scroll": "scroll",
@@ -84,31 +84,34 @@ export const ui = {
     "projects.aria.live": "Ver proyecto en vivo",
     "projects.featured.1.title": "Plataforma E-commerce",
     "projects.featured.1.description":
-      "Una plataforma de comercio electrónico completa con carrito de compras, procesamiento de pagos con Stripe, gestión de inventario y panel de administración.",
-    "projects.featured.2.title": "App de Gestión de Tareas",
+      "Un sitio de portafolio moderno y responsive que muestra mis habilidades y proyectos. Construido con Astro para rendimiento optimo e incluye animaciones suaves, soporte de modo oscuro y una seccion completa de proyectos.",
+    "projects.featured.2.title": "DrawTogether",
     "projects.featured.2.description":
-      "Aplicación web para gestión de proyectos con funcionalidades de drag-and-drop, colaboración en tiempo real, y notificaciones push.",
-    "projects.featured.3.title": "Dashboard Analytics",
+      "Aplicacion colaborativa de dibujo en tiempo real construida con React, TypeScript y WebSockets. Los usuarios pueden crear o unirse a salas y colaborar sobre un lienzo compartido.",
+    "projects.featured.3.title": "QRNav",
     "projects.featured.3.description":
-      "Panel de control interactivo para visualización de datos con gráficos dinámicos, filtros avanzados y exportación de reportes.",
-    "projects.other.1.title": "CLI Weather App",
+      "QRNav es una aplicacion Flutter para escanear codigos QR e interactuar rapidamente con su contenido. Permite trabajar con URLs, contactos, ubicaciones, correos, eventos de calendario o texto plano.",
+    "projects.other.1.title": "ClinicaUNA Management System",
     "projects.other.1.description":
-      "Herramienta de línea de comandos para obtener información meteorológica de cualquier ciudad del mundo.",
-    "projects.other.2.title": "Portfolio v1",
+      "Sistema integral de gestion clinica para la Universidad Nacional de Costa Rica. Incluye gestion de pacientes, citas, expedientes medicos y panel administrativo con control de acceso por roles.",
+    "projects.other.2.title": "CineUNA Booking System",
     "projects.other.2.description":
-      "Primera versión de mi portafolio personal construido con HTML, CSS y JavaScript vanilla.",
-    "projects.other.3.title": "Blog Personal",
+      "Sistema de reservas y gestion de cine para la UNA con interfaz JavaFX. Incluye cartelera, reservas de asientos, venta de boletos y reportes operativos.",
+    "projects.other.3.title": "Interactive Information Kiosk",
     "projects.other.3.description":
-      "Blog personal con soporte para markdown, sistema de comentarios y modo oscuro.",
-    "projects.other.4.title": "Chrome Extension",
+      "Sistema de kiosco informativo digital con interfaz tactil. Ofrece navegacion interactiva, contenido multimedia y funciones de accesibilidad para informacion publica.",
+    "projects.other.4.title": "Pomodoro Timer (25 + 5 Clock)",
     "projects.other.4.description":
-      "Extensión de Chrome para mejorar la productividad bloqueando sitios distractores.",
-    "projects.other.5.title": "API REST",
+      "Temporizador basado en la tecnica Pomodoro con intervalos de trabajo y descanso configurables. Incluye notificaciones de audio, seguimiento de sesiones e interfaz limpia.",
+    "projects.other.5.title": "Digital Drum Machine",
     "projects.other.5.description":
-      "API RESTful completa con autenticación JWT, rate limiting y documentación Swagger.",
-    "projects.other.6.title": "Mobile App",
+      "Aplicacion web de caja de ritmos interactiva con distintos sonidos. Incluye atajos de teclado, control de volumen y diseno adaptable.",
+    "projects.other.6.title": "Advanced JavaScript Calculator",
     "projects.other.6.description":
-      "Aplicación móvil de seguimiento de hábitos con recordatorios y estadísticas.",
+      "Calculadora web completa con funciones cientificas, memoria e historial. Implementa correctamente el orden de operaciones y manejo de errores.",
+    "projects.pending.1.title": "Live Markdown Previewer",
+    "projects.pending.1.description":
+      "Editor y previsualizador Markdown en tiempo real con resaltado de sintaxis, vista dividida y exportacion. Soporta GitHub Flavored Markdown.",
     // Contact
     "contact.kicker": "04. ¿Qué sigue?",
     "contact.title": "Ponte en Contacto",
@@ -136,7 +139,7 @@ export const ui = {
     "hero.title": "I build digital experiences",
     "hero.description":
       "I'm a full stack developer, I have knowledge of backend and frontend, fortunately to my knowledge and experience, I can develop custom products according to the client's needs. Currently I focus on building accessible, user-centered products and digital experiences",
-    "hero.company": "Freelance Project",
+    "hero.company": "Global Busines System (GBSYS)",
     "hero.projects": "View my projects",
     "hero.contact": "Contact me",
     "hero.scroll": "scroll",
@@ -153,9 +156,7 @@ export const ui = {
       "when I was a kid I had an affinity for technology, it grew as I grew and eventually led me to the choice of my professional career, systems engineering, where I started programming all kinds of projects, this starting in 2020 with the beginnings of my career, since then I have obtained knowledge in different areas of software development, from web application development, to mobile application development, passing through API development and databases.",
     "about.paragraph2":
       "Fast-forward to today, I have had the privilege of working at",
-    "about.company1": "a digital agency",
-    "about.company2": "a startup",
-    "about.company3": "a large corporation",
+    "about.company1": "Global Busines System (GBSYS)",
     "about.paragraph2Rest":
       "My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.",
     "about.techTitle":
@@ -192,33 +193,36 @@ export const ui = {
     "projects.archiveLink": "view archive",
     "projects.aria.github": "View code on GitHub",
     "projects.aria.live": "View live project",
-    "projects.featured.1.title": "E-commerce Platform",
+    "projects.featured.1.title": "Personal Portfolio",
     "projects.featured.1.description":
-      "A complete e-commerce platform with shopping cart, Stripe payment processing, inventory management, and an admin dashboard.",
-    "projects.featured.2.title": "Task Management App",
+      "A modern, responsive portfolio website showcasing my skills and projects. Built with Astro for optimal performance and featuring smooth animations, dark mode support, and comprehensive project showcases.",
+    "projects.featured.2.title": "DrawTogether",
     "projects.featured.2.description":
-      "Web application for project management with drag-and-drop features, real-time collaboration, and push notifications.",
-    "projects.featured.3.title": "Analytics Dashboard",
+      "A real-time collaborative drawing application built with React, TypeScript, and WebSockets. Users can create or join drawing rooms and collaborate in real-time on a shared canvas.",
+    "projects.featured.3.title": "QRNav",
     "projects.featured.3.description":
-      "Interactive dashboard for data visualization with dynamic charts, advanced filters, and report export.",
-    "projects.other.1.title": "CLI Weather App",
+      "QRNav is a Flutter application that allows users to scan QR codes and quickly interact with the scanned content. It supports URLs, contacts, locations, emails, calendar events, and plain text.",
+    "projects.other.1.title": "ClinicaUNA Management System",
     "projects.other.1.description":
-      "Command-line tool to get weather information for any city in the world.",
-    "projects.other.2.title": "Portfolio v1",
+      "Comprehensive clinic management system for Universidad Nacional de Costa Rica. Features patient management, appointment scheduling, medical records, and an administrative dashboard with role-based access control.",
+    "projects.other.2.title": "CineUNA Booking System",
     "projects.other.2.description":
-      "First version of my personal portfolio built with HTML, CSS, and vanilla JavaScript.",
-    "projects.other.3.title": "Personal Blog",
+      "Cinema booking and management system for UNA with a JavaFX GUI. Includes movie scheduling, seat reservation, ticket sales, and operational reporting.",
+    "projects.other.3.title": "Interactive Information Kiosk",
     "projects.other.3.description":
-      "Personal blog with markdown support, comment system, and dark mode.",
-    "projects.other.4.title": "Chrome Extension",
+      "Digital information kiosk system with a touch-friendly interface. Provides interactive navigation, multimedia content display, and accessibility features for public information access.",
+    "projects.other.4.title": "Pomodoro Timer (25 + 5 Clock)",
     "projects.other.4.description":
-      "Chrome extension to improve productivity by blocking distracting websites.",
-    "projects.other.5.title": "REST API",
+      "Productivity-focused Pomodoro timer with customizable work and break intervals. Features audio notifications, session tracking, and a clean interface.",
+    "projects.other.5.title": "Digital Drum Machine",
     "projects.other.5.description":
-      "Complete RESTful API with JWT authentication, rate limiting, and Swagger documentation.",
-    "projects.other.6.title": "Mobile App",
+      "Interactive drum machine web app with multiple drum sounds. Includes keyboard shortcuts, volume control, and responsive design.",
+    "projects.other.6.title": "Advanced JavaScript Calculator",
     "projects.other.6.description":
-      "Habit tracking mobile app with reminders and statistics.",
+      "Full-featured calculator with scientific functions, memory operations, and history tracking. Implements proper order of operations and robust error handling.",
+    "projects.pending.1.title": "Live Markdown Previewer",
+    "projects.pending.1.description":
+      "Real-time Markdown editor and previewer with syntax highlighting, split view, and export support. Supports GitHub Flavored Markdown.",
     // Contact
     "contact.kicker": "04. What's next?",
     "contact.title": "Get In Touch",
