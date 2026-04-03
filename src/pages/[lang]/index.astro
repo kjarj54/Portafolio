@@ -8,6 +8,8 @@ import Footer from "@landing/Footer.astro";
 import Contact from "@landing/Contact.astro";
 import About from "@landing/About.astro";
 import Hero from "@landing/Hero.astro";
+import Expericence from "@components/landingpage/Expericence.astro";
+import Projects from "@components/landingpage/Projects.astro";
 
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({ params: { lang } }));
@@ -25,7 +27,10 @@ export const prerender = false;
   <main>
     <Hero />
     <About />
+    <Expericence />
+    <Projects/>
     <Contact />
+    
   </main>
   <Footer />
 </Layout>

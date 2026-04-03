@@ -4,15 +4,23 @@ import { getLangFromUrl, useTranslations } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const skills = [
-  'JavaScript (ES6+)',
-  'TypeScript',
-  'React',
-  'Next.js',
-  'Node.js',
-  'Python',
-  'PostgreSQL',
-  'Tailwind CSS',
+const technologyGroups = [
+  {
+    title: t('about.techGroup.languages'),
+    items: ['Java','TypeScript', 'JavaScript', 'Python', 'C++/C'],
+  },
+  {
+    title: t('about.techGroup.frontend'),
+    items: ['React', 'Astro', 'Next.js', 'Tailwind CSS'],
+  },
+  {
+    title: t('about.techGroup.backend'),
+    items: ['SpringBoot','Express', 'NestJS', 'FastAPI'],
+  },
+  {
+    title: t('about.techGroup.databases'),
+    items: ['PostgreSQL', 'MySQL', 'SQLite', 'Oracle'],
+  },
 ];
 ---
 
@@ -34,9 +42,7 @@ const skills = [
         
         <p class="text-muted-foreground leading-relaxed">
           {t('about.paragraph2')}
-          <a href="#" class="text-primary hover:underline underline-offset-4">{t('about.company1')}</a>,
-          <a href="#" class="text-primary hover:underline underline-offset-4">{t('about.company2')}</a>, y
-          <a href="#" class="text-primary hover:underline underline-offset-4">{t('about.company3')}</a>. 
+          <a href="#" class="text-primary hover:underline underline-offset-4">{t('about.company1')}</a>.
           {t('about.paragraph2Rest')}
         </p>
 
@@ -44,34 +50,37 @@ const skills = [
           {t('about.techTitle')}
         </p>
 
-        <ul class="grid grid-cols-2 gap-2 mt-6">
-          {skills.map((skill, index) => (
-            <li 
-              class="flex items-center gap-2 text-sm text-muted-foreground reveal"
-              style={`transition-delay: ${200 + index * 50}ms;`}
-            >
-              <span class="text-primary text-xs">▹</span>
-              <span class="font-mono">{skill}</span>
-            </li>
+        <div class="grid gap-6 mt-6 sm:grid-cols-2">
+          {technologyGroups.map((group, groupIndex) => (
+            <div class="rounded-lg border border-border/60 bg-card/30 p-4 reveal" style={`transition-delay: ${200 + groupIndex * 80}ms;`}>
+              <h3 class="text-sm font-semibold text-foreground mb-3 tracking-wide">{group.title}</h3>
+              <ul class="space-y-2">
+                {group.items.map((item) => (
+                  <li class="flex items-center gap-2 text-sm text-muted-foreground">
+                    <span class="text-primary text-xs">▹</span>
+                    <span class="font-mono">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
 
-      <div class="relative group reveal reveal-delay-3">
-        <div class="relative aspect-square rounded-lg overflow-hidden">
-          <!-- Placeholder for profile image -->
-          <div class="absolute inset-0 bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-            <div class="w-32 h-32 rounded-full bg-primary/20 flex items-center justify-center">
-              <span class="text-4xl font-bold text-primary">TN</span>
-            </div>
+      <div class="relative group reveal reveal-delay-3 justify-self-center md:justify-self-end">
+        <div class="relative w-full max-w-60 overflow-hidden rounded-2xl border border-border/60 bg-card/20 p-2 shadow-2xl shadow-black/20">
+          <div class="relative overflow-hidden rounded-xl">
+            <div class="absolute inset-0 bg-linear-to-br from-primary/15 via-background/5 to-primary/5"></div>
+            <img
+              src="https://i.ibb.co/MxpX66F0/Yo.jpg"
+              alt="Foto de Kevin Arauz"
+              class="block h-80 w-full object-cover object-top transition-transform duration-500 group-hover:scale-105 sm:h-96"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="absolute inset-0 bg-linear-to-t from-background/35 via-transparent to-transparent"></div>
           </div>
-          
-          <!-- Overlay -->
-          <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300"></div>
         </div>
-        
-        <!-- Decorative border -->
-        <div class="absolute top-4 left-4 w-full h-full border-2 border-primary rounded-lg -z-10 group-hover:top-2 group-hover:left-2 transition-all duration-300"></div>
       </div>
     </div>
   </div>
