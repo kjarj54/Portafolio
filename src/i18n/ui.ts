@@ -53,15 +53,28 @@ export const ui = {
     "about.techGroup.databases": "Motores de Base de Datos",
     // Experience
     "experience.title": "Experiencia",
-    "experience.company.current": "Mi Empresa Actual",
-    "experience.role.current": "Senior Full Stack Developer",
-    "experience.period.current": "2023 — Presente",
+    "experience.company.current": "Global Busines System (GBSYS)",
+    "experience.role.current": "Practicante Desarrollador Full Stack APEX/Oracle",
+    "experience.period.current": "2026 — Presente",
     "experience.item1":
-      "Desarrollo y mantenimiento de componentes críticos utilizados para construir el frontend de la plataforma, en todo el producto.",
+      "Desarrollo de aplicaciones web con Oracle APEX, diseñando interfaces, formularios y reportes interactivos orientados a optimizar los procesos internos del negocio.",
     "experience.item2":
-      "Trabajo en estrecha colaboración con equipos multifuncionales, incluyendo desarrolladores, diseñadores y gerentes de producto.",
+      "Mantenimiento y optimización de base de datos Oracle, incluyendo creación y ajuste de consultas SQL/PLSQL, validaciones de datos y mejora de rendimiento en módulos existentes.",
     "experience.item3":
-      "Implementación de mejores prácticas de accesibilidad web para ofrecer una experiencia de usuario inclusiva.",
+      "Análisis y resolución de bugs reportados por QA, reproduciendo incidencias, corrigiendo lógica en APEX/PLSQL y validando que los cambios cumplan con los criterios de calidad.",
+
+
+    "experience.company.freelance": "Freelance",
+    "experience.role.freelance": "Desarrollador Full Stack",
+    "experience.period.freelance": "2020 — Presente",
+    "experience.item4":
+      "Levantamiento de requerimientos con clientes y desarrollo de soluciones web a medida, integrando frontend y backend según los objetivos de cada proyecto.",
+    "experience.item5":
+      "Diseño e implementación de APIs y lógica de negocio, conectando aplicaciones con bases de datos relacionales y servicios de terceros.",
+    "experience.item6":
+      "Despliegue y mantenimiento de aplicaciones en entornos cloud, realizando mejoras continuas de rendimiento, seguridad y experiencia de usuario.",
+    
+    
     // Projects
     "projects.title": "Proyectos Destacados",
     "projects.featuredLabel": "Proyecto Destacado",
@@ -153,15 +166,25 @@ export const ui = {
     "about.techGroup.databases": "Database Engines",
     // Experience
     "experience.title": "Experience",
-    "experience.company.current": "My Current Company",
-    "experience.role.current": "Senior Full Stack Developer",
-    "experience.period.current": "2023 — Present",
+    "experience.company.current": "Global Business System (GBSYS)",
+    "experience.role.current": "APEX/Oracle Full Stack Developer Intern",
+    "experience.period.current": "2026 — Present",
     "experience.item1":
-      "Development and maintenance of critical components used to build the platform frontend across the product.",
+      "Development of web applications with Oracle APEX, designing interfaces, forms, and interactive reports aimed at optimizing internal business processes.",
     "experience.item2":
-      "Close collaboration with cross-functional teams, including developers, designers, and product managers.",
+      "Maintenance and optimization of Oracle databases, including creation and tuning of SQL/PLSQL queries, data validations, and performance improvements in existing modules.",
     "experience.item3":
-      "Implementation of web accessibility best practices to deliver an inclusive user experience.",
+      "Analysis and resolution of QA-reported bugs by reproducing issues, correcting APEX/PLSQL logic, and validating that changes meet quality criteria.",
+
+    "experience.company.freelance": "Freelance",
+    "experience.role.freelance": "Full Stack Developer",
+    "experience.period.freelance": "2020 — Present",
+    "experience.item4":
+      "Requirements gathering with clients and development of custom web solutions, integrating frontend and backend according to each project's goals.",
+    "experience.item5":
+      "Design and implementation of APIs and business logic, connecting applications with relational databases and third-party services.",
+    "experience.item6":
+      "Deployment and maintenance of applications in cloud environments, making continuous improvements in performance, security, and user experience.",
     // Projects
     "projects.title": "Featured Projects",
     "projects.featuredLabel": "Featured Project",
