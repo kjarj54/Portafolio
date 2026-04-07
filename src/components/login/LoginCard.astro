@@ -1,0 +1,37 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+
+<div class:list={["relative w-full max-w-md", className]}>
+  <!-- Card glow effect -->
+  <div class="absolute -inset-1 bg-linear-to-r from-primary/20 via-transparent to-primary/20 rounded-2xl blur-xl opacity-50 animate-glow-pulse"></div>
+  <div class="absolute -inset-3 rounded-3xl bg-primary/5 blur-2xl terminal-halo"></div>
+  
+  <div class="terminal-shell relative bg-card/55 backdrop-blur-xl border border-border/60 rounded-2xl p-8 md:p-10 shadow-2xl overflow-hidden">
+    <div class="terminal-header mb-7 flex items-center justify-between gap-4 text-xs text-muted-foreground/85">
+      <div class="flex items-center gap-2">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="tracking-[0.22em] uppercase">session://login</span>
+    </div>
+
+    <div class="terminal-boot mb-6 text-[11px] leading-5 text-primary/80" aria-hidden="true">
+      <p class="boot-line">$ init handshake --secure</p>
+      <p class="boot-line">$ loading credentials module</p>
+      <p class="boot-line">$ ready for authentication</p>
+    </div>
+
+    <div class="terminal-content">
+      <slot />
+    </div>
+
+    <div class="terminal-scan"></div>
+  </div>
+</div>

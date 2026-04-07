@@ -1,16 +1,21 @@
 ---
 import Layout from "@layouts/Layout.astro";
 
-const { lang = "es" } = Astro.params;
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
+import BackgroundEffects from "@components/login/BackgroundEffects.astro";
+import LoginCard from "@components/login/LoginCard.astro";
+import LoginForm from "@components/login/LoginForm.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
-<Layout title="Login" description="Acceso a la cuenta">
-  <main class="min-h-screen flex items-center justify-center px-6">
-    <section class="w-full max-w-md rounded-lg border border-border bg-card p-8">
-      <h1 class="text-2xl font-bold text-foreground">Iniciar sesion</h1>
-      <p class="mt-2 text-sm text-muted-foreground">
-        Ruta activa para idioma: <span class="text-primary">{lang}</span>
-      </p>
-    </section>
+<Layout title={t("login.title")} description={t("login.description")}>
+  <main class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+    <BackgroundEffects />
+    <LoginCard>
+      <LoginForm />
+    </LoginCard>
   </main>
 </Layout>
