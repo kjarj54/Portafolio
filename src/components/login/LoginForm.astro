@@ -1,0 +1,27 @@
+---
+import Button from "@components/ui/Button.astro";
+import Input from "@components/ui/Input.astro";
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+---
+
+
+<form id="login-form" class="space-y-6">
+    <Input id="email" label={t("login.username")} placeholder="a@email.com" type="email" delay="200ms"></Input>
+    <Input id="password" label={t("login.password")} placeholder="********" type="password" delay="300ms"></Input>
+
+    <div class="flex items-center justify-between terminal-line" style="--line-delay: 450ms;">
+    <a href="#" class="text-sm text-primary hover:text-primary/80 transition-colors duration-300 font-medium terminal-link-type">
+      Hello there!
+    </a>
+  </div>
+
+  <div class="terminal-line" style="--line-delay: 650ms;">
+    <Button text="Iniciar sesión" loadingText="Iniciando..." />
+  </div>
+
+</form>
+

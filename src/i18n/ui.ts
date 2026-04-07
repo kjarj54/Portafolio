@@ -15,7 +15,7 @@ export const ui = {
     "nav.projects": "Proyectos",
     "nav.contact": "Contacto",
     "nav.cv": "Currículum",
-    "nav.closeMenu": "Cerrar menu",
+    "nav.closeMenu": "Cerrar menú",
     "nav.blog": "Blog",
     // SEO
     "site.title": "Portafolio & Blog",
@@ -25,8 +25,8 @@ export const ui = {
     "hero.name": "Kevin Arauz",
     "hero.title": "Construyo experiencias digitales",
     "hero.description":
-      "Soy desarrollador full stack, tengo conocimientos de backend y frontend, gracias a mi conocimiento y experiencia, puedo desarrollar productos a la medida segun el cliente lo requiera. Actualmente me enfoco en construir productos accesibles, centrados en el usuario",
-    "hero.company": "Global Busines System (GBSYS)",
+      "Soy desarrollador full stack, tengo conocimientos de backend y frontend, gracias a mi conocimiento y experiencia, puedo desarrollar productos a la medida según lo que el cliente requiera. Actualmente me enfoco en construir productos accesibles, centrados en el usuario",
+    "hero.company": "Global Business System (GBSYS)",
     "hero.projects": "Ver mis proyectos",
     "hero.contact": "Contáctame",
     "hero.scroll": "scroll",
@@ -39,7 +39,7 @@ export const ui = {
     "about.paragraph1": "Hola! Mi nombre es",
     "about.paragraph1Name": "Kevin Arauz",
     "about.paragraph1Rest":
-      "desde pequeño e tenido una afinidad por la tecnologia, esta creció con forme crecia y eventualmente me llevó a la eleccion de mi carrera profesional, ingeniería en sistemas, donde comencé a programar todo tipo de proyectos, esto comenzando en 2020 con los inicios de mi carrera, desde entonces he optenido conocimientos en distintas areas del desarrollo de software, desde el desarrollo de aplicaciones web, hasta el desarrollo de aplicaciones móviles, pasando por el desarrollo de APIs y bases de datos.",
+      "desde pequeño he tenido una afinidad por la tecnología, esta creció conforme crecía y eventualmente me llevó a la elección de mi carrera profesional, ingeniería en sistemas, donde comencé a programar todo tipo de proyectos, esto comenzando en 2020 con los inicios de mi carrera, desde entonces he obtenido conocimientos en distintas áreas del desarrollo de software, desde el desarrollo de aplicaciones web hasta el desarrollo de aplicaciones móviles, pasando por el desarrollo de APIs y bases de datos.",
     "about.paragraph2":
       "Avanzando hasta hoy, he tenido el privilegio de trabajar en",
     "about.company1": "GBSYS",
@@ -53,7 +53,7 @@ export const ui = {
     "about.techGroup.databases": "Motores de Base de Datos",
     // Experience
     "experience.title": "Experiencia",
-    "experience.company.current": "Global Busines System (GBSYS)",
+    "experience.company.current": "Global Business System (GBSYS)",
     "experience.role.current": "Practicante Desarrollador Full Stack APEX/Oracle",
     "experience.period.current": "2026 — Presente",
     "experience.item1":
@@ -84,34 +84,34 @@ export const ui = {
     "projects.aria.live": "Ver proyecto en vivo",
     "projects.featured.1.title": "Plataforma E-commerce",
     "projects.featured.1.description":
-      "Un sitio de portafolio moderno y responsive que muestra mis habilidades y proyectos. Construido con Astro para rendimiento optimo e incluye animaciones suaves, soporte de modo oscuro y una seccion completa de proyectos.",
+      "Un sitio de portafolio moderno y responsive que muestra mis habilidades y proyectos. Construido con Astro para rendimiento óptimo e incluye animaciones suaves, soporte de modo oscuro y una sección completa de proyectos.",
     "projects.featured.2.title": "DrawTogether",
     "projects.featured.2.description":
-      "Aplicacion colaborativa de dibujo en tiempo real construida con React, TypeScript y WebSockets. Los usuarios pueden crear o unirse a salas y colaborar sobre un lienzo compartido.",
+      "Aplicación colaborativa de dibujo en tiempo real construida con React, TypeScript y WebSockets. Los usuarios pueden crear o unirse a salas y colaborar sobre un lienzo compartido.",
     "projects.featured.3.title": "QRNav",
     "projects.featured.3.description":
-      "QRNav es una aplicacion Flutter para escanear codigos QR e interactuar rapidamente con su contenido. Permite trabajar con URLs, contactos, ubicaciones, correos, eventos de calendario o texto plano.",
+      "QRNav es una aplicación Flutter para escanear códigos QR e interactuar rápidamente con su contenido. Permite trabajar con URLs, contactos, ubicaciones, correos, eventos de calendario o texto plano.",
     "projects.other.1.title": "ClinicaUNA Management System",
     "projects.other.1.description":
-      "Sistema integral de gestion clinica para la Universidad Nacional de Costa Rica. Incluye gestion de pacientes, citas, expedientes medicos y panel administrativo con control de acceso por roles.",
+      "Sistema integral de gestión clínica para la Universidad Nacional de Costa Rica. Incluye gestión de pacientes, citas, expedientes médicos y panel administrativo con control de acceso por roles.",
     "projects.other.2.title": "CineUNA Booking System",
     "projects.other.2.description":
-      "Sistema de reservas y gestion de cine para la UNA con interfaz JavaFX. Incluye cartelera, reservas de asientos, venta de boletos y reportes operativos.",
+      "Sistema de reservas y gestión de cine para la UNA con interfaz JavaFX. Incluye cartelera, reservas de asientos, venta de boletos y reportes operativos.",
     "projects.other.3.title": "Interactive Information Kiosk",
     "projects.other.3.description":
-      "Sistema de kiosco informativo digital con interfaz tactil. Ofrece navegacion interactiva, contenido multimedia y funciones de accesibilidad para informacion publica.",
+      "Sistema de kiosco informativo digital con interfaz táctil. Ofrece navegación interactiva, contenido multimedia y funciones de accesibilidad para información pública.",
     "projects.other.4.title": "Pomodoro Timer (25 + 5 Clock)",
     "projects.other.4.description":
       "Temporizador basado en la tecnica Pomodoro con intervalos de trabajo y descanso configurables. Incluye notificaciones de audio, seguimiento de sesiones e interfaz limpia.",
     "projects.other.5.title": "Digital Drum Machine",
     "projects.other.5.description":
-      "Aplicacion web de caja de ritmos interactiva con distintos sonidos. Incluye atajos de teclado, control de volumen y diseno adaptable.",
+      "Aplicación web de caja de ritmos interactiva con distintos sonidos. Incluye atajos de teclado, control de volumen y diseño adaptable.",
     "projects.other.6.title": "Advanced JavaScript Calculator",
     "projects.other.6.description":
-      "Calculadora web completa con funciones cientificas, memoria e historial. Implementa correctamente el orden de operaciones y manejo de errores.",
+      "Calculadora web completa con funciones científicas, memoria e historial. Implementa correctamente el orden de operaciones y manejo de errores.",
     "projects.pending.1.title": "Live Markdown Previewer",
     "projects.pending.1.description":
-      "Editor y previsualizador Markdown en tiempo real con resaltado de sintaxis, vista dividida y exportacion. Soporta GitHub Flavored Markdown.",
+      "Editor y previsualizador Markdown en tiempo real con resaltado de sintaxis, vista dividida y exportación. Soporta GitHub Flavored Markdown.",
     // Contact
     "contact.kicker": "04. ¿Qué sigue?",
     "contact.title": "Ponte en Contacto",
@@ -120,6 +120,16 @@ export const ui = {
     "contact.cta": "Escríbeme",
     // Footer
     "footer.designedBy": "Diseñado y Construido por Kevin Arauz",
+
+
+
+    // Login
+    "login.title": "Login",
+    "login.description": "Este login es unicamente para uso propio para acceder al cms del blog no deberia ser utilizado por otros.",
+    "login.username": "Nombre de usuario",
+    "login.password": "Contraseña",
+    "login.submit": "Iniciar sesión",
+
   },
   en: {
     "nav.home": "Home",
@@ -231,6 +241,14 @@ export const ui = {
     "contact.cta": "Write me",
     // Footer
     "footer.designedBy": "Designed and Built by Kevin Arauz",
+
+
+    // Login
+    "login.title": "Login",
+    "login.description": "This login is only for personal use to access the blog's CMS and should not be used by others.",
+    "login.username": "Username",
+    "login.password": "Password",
+    "login.submit": "Submit",
   },
 } as const;
 
