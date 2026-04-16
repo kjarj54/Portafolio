@@ -51,7 +51,7 @@ Hi there! I'm Kevin Arauz, a passionate Software Engineer and FullStack Develope
 To run this project locally:
 
 ### Prerequisites
-- Node.js (v18 or higher)
+- Node.js (v22.12.0 or higher)
 - npm or yarn
 
 ### Installation
@@ -80,6 +80,27 @@ npm run dev
 npm run build
 ```
 
+### Drizzle Commands
+
+Use these commands to manage your database schema with Drizzle Kit:
+
+```bash
+# Generate SQL migrations from your schema
+npx drizzle-kit generate
+
+# Apply migrations to the database
+npx drizzle-kit migrate
+
+# Push schema changes directly (without migration files)
+npx drizzle-kit push
+
+# Open Drizzle Studio
+npx drizzle-kit studio
+```
+
+
+
+
 The built site will be in the `dist/` folder.
 
 ## 📁 Project Structure
@@ -87,28 +108,71 @@ The built site will be in the `dist/` folder.
 ```
 /
 ├── public/
-│   ├── favicon.svg
-│   ├── placeholder.svg
 │   └── robots.txt
 ├── src/
+│   ├── middleware.ts
 │   ├── assets/
 │   ├── components/
-│   │   └── SEO.astro
+│   │   ├── LanguajePicker.astro
+│   │   ├── SEO.astro
+│   │   ├── dashboard/
+│   │   ├── landingpage/
+│   │   │   ├── About.astro
+│   │   │   ├── Contact.astro
+│   │   │   ├── Expericence.astro
+│   │   │   ├── Footer.astro
+│   │   │   ├── Header.astro
+│   │   │   ├── Hero.astro
+│   │   │   ├── Projects.astro
+│   │   │   └── SocialSideBar.astro
+│   │   ├── login/
+│   │   │   ├── BackgroundEffects.astro
+│   │   │   ├── LoginCard.astro
+│   │   │   └── LoginForm.astro
+│   │   └── ui/
+│   │       ├── Button.astro
+│   │       └── Input.astro
+│   ├── content/
+│   │   ├── en/
+│   │   │   └── hello-world.md
+│   │   └── es/
+│   │       └── hola-mundo.md
 │   ├── db/
 │   │   ├── index.ts
 │   │   ├── loader.ts
 │   │   └── schema.ts
+│   ├── i18n/
+│   │   ├── ui.ts
+│   │   └── utils.ts
 │   ├── layouts/
 │   │   ├── BlogPost.astro
 │   │   └── Layout.astro
+│   ├── lib/
+│   │   ├── auth-client.ts
+│   │   └── auth.ts
+│   ├── loaders/
+│   │   └── blogApiLoader.ts
 │   ├── pages/
 │   │   ├── index.astro
-│   │   └── blog/
-│   │       ├── index.astro
-│   │       └── [slug].astro
+│   │   ├── [lang]/
+│   │   │   ├── index.astro
+│   │   │   ├── blog/
+│   │   │   │   ├── [slug].astro
+│   │   │   │   └── index.astro
+│   │   │   ├── login/
+│   │   │   │   └── index.astro
+│   │   │   └── projects/
+│   │   │       └── index.astro
+│   │   └── api/
+│   │       ├── hello.ts
+│   │       └── auth/
+│   │           └── [...all].ts
 │   ├── styles/
 │   │   └── global.css
 │   └── content.config.ts
+├── env.d.ts
+├── LICENSE
+├── README.md
 ├── astro.config.mjs
 ├── drizzle.config.ts
 ├── tsconfig.json
