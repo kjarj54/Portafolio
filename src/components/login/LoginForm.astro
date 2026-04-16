@@ -2,6 +2,8 @@
 import Button from "@components/ui/Button.astro";
 import Input from "@components/ui/Input.astro";
 import { getLangFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils";
+import helloThereGif from "@assets/hello_there.mp4";
+import helloThereAudio from "@assets/obi-wan-hello-there.mp3";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
@@ -13,10 +15,21 @@ const translatePath = useTranslatedPath(lang);
     <Input id="email" label={t("login.username")} placeholder="a@email.com" type="email" delay="200ms"></Input>
     <Input id="password" label={t("login.password")} placeholder="********" type="password" delay="300ms"></Input>
 
-    <div class="flex items-center justify-between terminal-line" style="--line-delay: 450ms;">
-    <a href="#" class="text-sm text-primary hover:text-primary/80 transition-colors duration-300 font-medium terminal-link-type">
+    <div class="flex flex-col items-start gap-2 terminal-line" style="--line-delay: 450ms;">
+    <video
+      id="hello-there-gif"
+      src={helloThereGif}
+      class="w-52 max-w-full rounded-md border border-primary/30 hidden"
+      muted
+    />
+    <a
+      id="hello-there-link"
+      href="#"
+      class="text-sm text-primary hover:text-primary/80 transition-colors duration-300 font-medium terminal-link-type"
+    >
       Hello there!
     </a>
+    <audio id="hello-there-audio" src={helloThereAudio} preload="auto"></audio>
   </div>
 
   <div class="terminal-line" style="--line-delay: 650ms;">
@@ -25,3 +38,36 @@ const translatePath = useTranslatedPath(lang);
 
 </form>
 
+<script>
+  const helloThereLink = document.getElementById("hello-there-link");
+  const helloThereVideo = document.getElementById("hello-there-gif") as HTMLVideoElement;
+  const helloThereAudio = document.getElementById("hello-there-audio") as HTMLAudioElement;
+
+  if (helloThereLink && helloThereVideo && helloThereAudio) {
+    helloThereLink.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      // Mostrar video con animación de entrada
+      helloThereVideo.classList.add("visible");
+      helloThereVideo.classList.remove("hidden-out");
+
+      // Reproducir video y audio sincronizados
+      helloThereVideo.currentTime = 0;
+      helloThereAudio.currentTime = 0;
+      void helloThereVideo.play();
+      
+      // Reproducir audio después de 2 segundos
+      setTimeout(() => {
+        void helloThereAudio.play();
+      }, 1600);
+
+      // Ocultar video cuando el audio termine
+      const handleAudioEnd = () => {
+        helloThereVideo.classList.remove("visible");
+        helloThereVideo.classList.add("hidden-out");
+        helloThereAudio.removeEventListener("ended", handleAudioEnd);
+      };
+      helloThereAudio.addEventListener("ended", handleAudioEnd);
+    });
+  }
+</script>
