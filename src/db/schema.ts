@@ -20,7 +20,7 @@ export const posts = sqliteTable('posts', {
 });
 
 export const user = sqliteTable("user", {
-  id: text("id").primaryKey(),
+  id: integer("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull(),
   email: text("email").notNull().unique(),
   emailVerified: integer("email_verified", { mode: "boolean" })
@@ -39,7 +39,7 @@ export const user = sqliteTable("user", {
 export const session = sqliteTable(
   "session",
   {
-    id: text("id").primaryKey(),
+    id: integer("id").primaryKey({ autoIncrement: true }),
     expiresAt: integer("expires_at", { mode: "timestamp_ms" }).notNull(),
     token: text("token").notNull().unique(),
     createdAt: integer("created_at", { mode: "timestamp_ms" })
@@ -50,7 +50,7 @@ export const session = sqliteTable(
       .notNull(),
     ipAddress: text("ip_address"),
     userAgent: text("user_agent"),
-    userId: text("user_id")
+    userId: integer("user_id")
       .notNull()
       .references(() => user.id, { onDelete: "cascade" }),
   },
@@ -60,10 +60,10 @@ export const session = sqliteTable(
 export const account = sqliteTable(
   "account",
   {
-    id: text("id").primaryKey(),
+    id: integer("id").primaryKey({ autoIncrement: true }),
     accountId: text("account_id").notNull(),
     providerId: text("provider_id").notNull(),
-    userId: text("user_id")
+    userId: integer("user_id")
       .notNull()
       .references(() => user.id, { onDelete: "cascade" }),
     accessToken: text("access_token"),
@@ -90,7 +90,7 @@ export const account = sqliteTable(
 export const verification = sqliteTable(
   "verification",
   {
-    id: text("id").primaryKey(),
+    id: integer("id").primaryKey({ autoIncrement: true }),
     identifier: text("identifier").notNull(),
     value: text("value").notNull(),
     expiresAt: integer("expires_at", { mode: "timestamp_ms" }).notNull(),
