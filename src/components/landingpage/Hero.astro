@@ -1,88 +1,108 @@
 ---
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import {
+  getLangFromUrl,
+  useTranslatedPath,
+  useTranslations,
+} from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
-<section class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
-  <!-- Background gradient -->
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(100,255,218,0.08),transparent_50%)]"></div>
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(100,255,218,0.05),transparent_50%)]"></div>
-  
-  <!-- Grid pattern -->
-  <div 
-    class="absolute inset-0 opacity-[0.02]"
-    style="background-image: linear-gradient(rgba(100,255,218,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(100,255,218,0.3) 1px, transparent 1px); background-size: 60px 60px;"
-  ></div>
+<section
+  class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden"
+>
+  <!-- Small blurred clusters to soften transitions between sections -->
+  <div
+    class="absolute top-[7%] left-[10%] h-64 w-64 rounded-full blur-3xl mix-blend-screen animate-float-slow"
+    style="background: radial-gradient(circle, rgba(100,255,218,0.3) 0%, rgba(100,255,218,0.12) 42%, transparent 76%);"
+  >
+  </div>
+  <div
+    class="absolute top-[21%] right-[14%] h-52 w-52 rounded-full blur-3xl mix-blend-screen animate-float-slower"
+    style="background: radial-gradient(circle, rgba(100,255,218,0.26) 0%, rgba(100,255,218,0.1) 44%, transparent 78%);"
+  >
+  </div>
+  <div
+    class="absolute top-[39%] left-[33%] h-40 w-40 rounded-full blur-2xl mix-blend-screen animate-float-slow"
+    style="background: radial-gradient(circle, rgba(100,255,218,0.22) 0%, rgba(100,255,218,0.08) 46%, transparent 80%);"
+  >
+  </div>
+  <div
+    class="absolute bottom-[22%] right-[24%] h-56 w-56 rounded-full blur-3xl mix-blend-screen animate-float-slower"
+    style="background: radial-gradient(circle, rgba(100,255,218,0.28) 0%, rgba(100,255,218,0.11) 40%, transparent 76%);"
+  >
+  </div>
+  <div
+    class="absolute bottom-[8%] left-[16%] h-44 w-44 rounded-full blur-2xl mix-blend-screen animate-float-slow"
+    style="background: radial-gradient(circle, rgba(100,255,218,0.2) 0%, rgba(100,255,218,0.07) 44%, transparent 80%);"
+  >
+  </div>
 
+  <div
+    class="absolute inset-0 opacity-[0.018]"
+    style="background-image: linear-gradient(rgba(100,255,218,0.32) 1px, transparent 1px), linear-gradient(90deg, rgba(100,255,218,0.32) 1px, transparent 1px); background-size: 60px 60px;"
+  >
+  </div>
   <div class="relative z-10 max-w-4xl mx-auto">
-    <p 
+    <p
       class="font-mono text-primary text-sm md:text-base mb-6 opacity-0 animate-fade-in-up"
       style="animation-delay: 100ms; animation-fill-mode: forwards;"
     >
-      {t('hero.greeting')}
+      {t("hero.greeting")}
     </p>
-    
-    <h1 
+
+    <h1
       class="text-4xl sm:text-5xl md:text-7xl font-bold text-foreground mb-4 opacity-0 animate-fade-in-up tracking-tight"
       style="animation-delay: 200ms; animation-fill-mode: forwards;"
     >
-      {t('hero.name')}.
+      {t("hero.name")}.
     </h1>
-    
-    <h2 
+
+    <h2
       class="text-3xl sm:text-4xl md:text-6xl font-bold text-muted-foreground mb-8 opacity-0 animate-fade-in-up"
       style="animation-delay: 300ms; animation-fill-mode: forwards;"
     >
-      {t('hero.title')}.
+      {t("hero.title")}.
     </h2>
-    
-    <p 
+
+    <p
       class="text-muted-foreground text-base md:text-lg max-w-xl leading-relaxed mb-12 opacity-0 animate-fade-in-up"
       style="animation-delay: 400ms; animation-fill-mode: forwards;"
     >
-      {t('hero.description')} 
-      <a href="#experience" class="text-primary hover:underline underline-offset-4">
-        {t('hero.company')}
+      {t("hero.description")}
+      <a
+        href="#experience"
+        class="text-primary hover:underline underline-offset-4"
+      >
+        {t("hero.company")}
       </a>.
     </p>
 
-    <div 
+    <div
       class="flex flex-wrap gap-4 opacity-0 animate-fade-in-up"
       style="animation-delay: 500ms; animation-fill-mode: forwards;"
     >
-      <a
-        href="#projects"
-        class="group inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-primary border border-primary rounded hover:bg-primary/10 transition-all duration-300"
-      >
-        {t('hero.projects')}
-        <svg 
-          class="w-4 h-4 transition-transform group-hover:translate-x-1" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
+      <a href="#projects" class="fx-btn px-6 py-3 text-sm">
+        {t("hero.projects")}
       </a>
-      
-      <a
-        href="#contact"
-        class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-foreground bg-primary/10 rounded hover:bg-primary/20 transition-colors"
-      >
-        {t('hero.contact')}
+
+      <a href="#contact" class="fx-btn fx-btn--ghost px-6 py-3 text-sm">
+        {t("hero.contact")}
       </a>
     </div>
   </div>
 
   <!-- Scroll indicator -->
-  <div 
+  <div
     class="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in"
     style="animation-delay: 1000ms; animation-fill-mode: forwards;"
   >
     <div class="flex flex-col items-center gap-2">
-      <span class="text-xs text-muted-foreground font-mono">{t('hero.scroll')}</span>
+      <span class="text-xs text-muted-foreground font-mono"
+        >{t("hero.scroll")}</span
+      >
       <div class="w-px h-12 bg-linear-to-b from-primary to-transparent"></div>
     </div>
   </div>

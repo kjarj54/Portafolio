@@ -1,5 +1,6 @@
 ---
 import SEO from "../components/SEO.astro";
+import GradientBackground from "@components/shared/GradientBackground.astro";
 import "../styles/global.css";
 interface Props {
   title: string;
@@ -97,8 +98,11 @@ const { title, description, image, type, publishedDate } = Astro.props;
       window.addEventListener('scroll', setActiveSection);
     </script>
   </head>
-  <body class="min-h-screen bg-background text-foreground font-sans">
-    <slot />
+  <body class="relative min-h-screen overflow-x-hidden bg-background text-foreground font-sans">
+    <GradientBackground />
+    <div class="relative z-10">
+      <slot />
+    </div>
   </body>
 </html>
 

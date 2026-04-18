@@ -278,6 +278,78 @@ body {
   animation-delay: var(--field-delay);
 }
 
+/* Shared CTA button effect */
+.fx-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 62%, transparent);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: color-mix(in srgb, var(--primary) 92%, white);
+  font-weight: 600;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background-color 0.28s ease, color 0.28s ease;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary) 14%, transparent);
+  isolation: isolate;
+}
+
+.fx-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, color-mix(in srgb, var(--primary) 30%, transparent), transparent 48%);
+  opacity: 0.4;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.fx-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent 15%, color-mix(in srgb, var(--primary) 60%, white) 50%, transparent 85%);
+  opacity: 0;
+  transform: skewX(-20deg);
+  transition: left 0.65s ease, opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.fx-btn:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--primary) 92%, transparent);
+  background: color-mix(in srgb, var(--primary) 20%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--primary) 28%, transparent),
+    0 14px 28px color-mix(in srgb, var(--background) 72%, transparent);
+}
+
+.fx-btn:hover::after {
+  left: 130%;
+  opacity: 0.75;
+}
+
+.fx-btn:active {
+  transform: translateY(0);
+}
+
+.fx-btn--ghost {
+  color: var(--foreground);
+  border-color: color-mix(in srgb, var(--border) 80%, transparent);
+  background: color-mix(in srgb, var(--card) 60%, transparent);
+}
+
+.fx-btn--ghost:hover {
+  color: color-mix(in srgb, var(--primary) 92%, white);
+  border-color: color-mix(in srgb, var(--primary) 68%, transparent);
+}
+
 .terminal-label-text {
   display: inline-block;
   white-space: nowrap;
