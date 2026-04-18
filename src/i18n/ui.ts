@@ -112,6 +112,12 @@ export const ui = {
     "projects.pending.1.title": "Live Markdown Previewer",
     "projects.pending.1.description":
       "Editor y previsualizador Markdown en tiempo real con resaltado de sintaxis, vista dividida y exportación. Soporta GitHub Flavored Markdown.",
+    "projects.page.kicker": "Archivo",
+    "projects.page.title": "Todos mis proyectos",
+    "projects.page.description":
+      "Una vista completa de proyectos destacados y trabajos en progreso, manteniendo la misma estética y experiencia de navegación del sitio principal.",
+    "projects.page.backHome": "Volver al inicio",
+    "projects.page.pendingTitle": "Proyectos en progreso",
     // Contact
     "contact.kicker": "04. ¿Qué sigue?",
     "contact.title": "Ponte en Contacto",
@@ -233,6 +239,12 @@ export const ui = {
     "projects.pending.1.title": "Live Markdown Previewer",
     "projects.pending.1.description":
       "Real-time Markdown editor and previewer with syntax highlighting, split view, and export support. Supports GitHub Flavored Markdown.",
+    "projects.page.kicker": "Archive",
+    "projects.page.title": "All my projects",
+    "projects.page.description":
+      "A complete view of featured projects and in-progress work, preserving the same visual style and navigation experience as the main site.",
+    "projects.page.backHome": "Back to home",
+    "projects.page.pendingTitle": "Projects in progress",
     // Contact
     "contact.kicker": "04. What's next?",
     "contact.title": "Get In Touch",

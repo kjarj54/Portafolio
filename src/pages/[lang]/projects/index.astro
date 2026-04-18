@@ -1,22 +1,22 @@
 ---
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
+import Layout from '@layouts/Layout.astro';
+import Header from '@components/shared/Header.astro';
+import SocialSideBar from '@components/shared/SocialSideBar.astro';
+import Footer from '@components/shared/Footer.astro';
+import Projects from '@components/projects/Projects.astro';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
-
-const pendingProjects = [
-  {
-    title: t('projects.pending.1.title'),
-    description: t('projects.pending.1.description'),
-    image: 'https://i.ibb.co/gYZB94c/Markdown-Previewer.png',
-    technologies: ['React', 'JavaScript', 'Marked.js', 'CSS3'],
-    github:
-      'https://github.com/kjarj54/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/tree/main/Markdown%20Previewer',
-    external:
-      'https://kjarj54.github.io/Practicas-FreeCodeCamp-FrontEndDevelopmentLibraries/Markdown%20Previewer/',
-  },
-];
-
 ---
-<h1>Projects</h1>
+
+<Layout title={`${t('nav.projects')} | ${t('site.title')}`} description={t('site.description')}>
+  <Header />
+  <SocialSideBar />
+
+  <main class="pt-12 md:pt-16">
+    <Projects />
+  </main>
+
+  <Footer />
+</Layout>
