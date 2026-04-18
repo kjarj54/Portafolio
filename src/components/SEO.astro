@@ -1,6 +1,5 @@
 ---
 import { getLangFromUrl } from '@i18n/utils';
-import { ui, defaultLang } from '../i18n/ui';
 interface Props{
     title: string;
     description: string;
@@ -23,23 +22,32 @@ const {
 
 const siteName = 'Kevin Arauz';
 const fullTitle = `${title} | ${siteName}`;
-const absoluteImage = new URL(image, Astro.site).href;
+const baseUrl = Astro.site ?? Astro.url.origin;
+const absoluteCanonicalUrl = new URL(canonicalURL, baseUrl).href;
+const absoluteImage = new URL(image, baseUrl).href;
 const lang = getLangFromUrl(Astro.url);
+const ogLocale = lang === 'en' ? 'en_US' : 'es_ES';
 
 ---
 
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <meta name="author" content={author} />
-<link rel="canonical" href={canonicalURL} />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href={absoluteCanonicalUrl} />
 
 <!-- Open Graph -->
 <meta property="og:type" content={type} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={absoluteImage} />
-<meta property="og:url" content={canonicalURL} />
+<meta property="og:image:secure_url" content={absoluteImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={fullTitle} />
+<meta property="og:url" content={absoluteCanonicalUrl} />
 <meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content={ogLocale} />
 
 
 <!-- Twitter Card -->
@@ -47,6 +55,8 @@ const lang = getLangFromUrl(Astro.url);
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={absoluteImage} />
+<meta name="twitter:url" content={absoluteCanonicalUrl} />
+<meta name="twitter:image:alt" content={fullTitle} />
 
 <!-- Blog post específico -->
 {publishedDate && <meta property="article:published_time" content={publishedDate} />}
