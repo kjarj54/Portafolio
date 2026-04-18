@@ -54,7 +54,7 @@ const pendingProjects = [
 		<div class="reveal mb-10">
 			<a
 				href={translatePath('/')}
-				class="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground hover:text-primary transition-colors"
+				class="fx-btn fx-btn--ghost px-4 py-2 font-mono text-xs"
 			>
 				<span aria-hidden="true">&larr;</span>
 				{t('projects.page.backHome')}
@@ -169,7 +169,7 @@ const pendingProjects = [
 							href={project.github}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="inline-flex px-4 py-2 text-xs font-medium text-primary border border-primary/60 rounded hover:bg-primary/10 transition-colors"
+							class="fx-btn px-4 py-2 text-xs"
 						>
 							GitHub
 						</a>
@@ -177,7 +177,7 @@ const pendingProjects = [
 							href={project.external}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="inline-flex px-4 py-2 text-xs font-medium text-foreground bg-primary/10 rounded hover:bg-primary/20 transition-colors"
+							class="fx-btn fx-btn--ghost px-4 py-2 text-xs"
 						>
 							Demo
 						</a>
