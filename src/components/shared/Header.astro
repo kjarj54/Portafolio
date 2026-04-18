@@ -1,51 +1,61 @@
 ---
-import { getLangFromUrl, useTranslatedPath, useTranslations } from '@i18n/utils';
+import {
+  getLangFromUrl,
+  useTranslatedPath,
+  useTranslations,
+} from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
 const navItems = [
-  { key: 'nav.about', href: '#about' },
-  { key: 'nav.experience', href: '#experience' },
-  { key: 'nav.projects', href: '#projects' },
-  { key: 'nav.contact', href: '#contact' },
+  { key: "nav.about", href: "#about" },
+  { key: "nav.experience", href: "#experience" },
+  { key: "nav.projects", href: "#projects" },
+  { key: "nav.contact", href: "#contact" },
 ];
 ---
 
-<header 
+<header
   id="main-header"
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
 >
   <nav class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-    <a 
-      href={`${translatePath('/')}#`} 
+    <a
+      href={`${translatePath("/")}#`}
       class="text-xl font-bold text-primary hover:opacity-80 transition-opacity"
     >
-      {'<ARAUZ/>'}
+      {"<ARAUZ/>"}
     </a>
-    
+
     <ul class="hidden md:flex items-center gap-8">
-      {navItems.map((item, index) => (
-        <li>
-          <a
-            href={`${translatePath('/')}${item.href}`}
-            class="nav-link text-sm tracking-wide transition-colors hover:text-primary text-muted-foreground"
-          >
-            <span class="font-mono text-primary text-xs mr-1">0{index + 1}.</span>
-            {t(item.key as any)}
-          </a>
-        </li>
-      ))}
+      {
+        navItems.map((item, index) => (
+          <li>
+            <a
+              href={`${translatePath("/")}${item.href}`}
+              class="nav-link text-sm tracking-wide transition-colors hover:text-primary text-muted-foreground"
+            >
+              <span class="font-mono text-primary text-xs mr-1">
+                0{index + 1}.
+              </span>
+              {t(item.key as any)}
+            </a>
+          </li>
+        ))
+      }
     </ul>
 
     <div class="hidden md:flex items-center gap-3">
       <a
-        href={translatePath('/blog')}
+        href={translatePath("/blog")}
         class="fx-btn relative min-w-28 justify-center px-4 py-2 text-sm"
       >
-        <span class="absolute left-3 inline-flex h-2 w-2 rounded-full bg-primary animate-glow-pulse"></span>
-        <span class="w-full text-center">{t('nav.blog')}</span>
+        <span
+          class="absolute left-3 inline-flex h-2 w-2 rounded-full bg-primary animate-glow-pulse"
+        ></span>
+        <span class="w-full text-center">{t("nav.blog")}</span>
       </a>
 
       <a
@@ -54,94 +64,152 @@ const navItems = [
         rel="noopener noreferrer"
         class="fx-btn fx-btn--ghost px-4 py-2 text-sm"
       >
-        {t('nav.cv')}
+        {t("nav.cv")}
       </a>
     </div>
 
-    <button 
-      id="mobile-menu-btn"
-      class="md:hidden text-foreground p-2"
-      aria-label={t('nav.contact')}
-    >
-      <svg 
-        class="w-6 h-6" 
-        fill="none" 
-        stroke="currentColor" 
-        viewBox="0 0 24 24"
-      >
-        <path 
-          stroke-linecap="round" 
-          stroke-linejoin="round" 
-          stroke-width="2" 
-          d="M4 6h16M4 12h16M4 18h16" 
-        />
-      </svg>
-    </button>
-  </nav>
-  
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-background/95 backdrop-blur-md z-50">
-    <div class="flex flex-col items-center justify-center h-full gap-8">
-      <button 
-        id="close-menu-btn"
-        class="absolute top-6 right-6 text-foreground p-2"
-        aria-label={t('nav.closeMenu')}
-      >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-      
-      {navItems.map((item, index) => (
-        <a
-          href={`${translatePath('/')}${item.href}`}
-          class="mobile-nav-link text-xl text-foreground hover:text-primary transition-colors"
-        >
-          <span class="font-mono text-primary text-sm mr-2">0{index + 1}.</span>
-          {t(item.key as any)}
-        </a>
-      ))}
-
-      <a
-        href={translatePath('/blog')}
-        class="mobile-nav-link text-xl text-foreground hover:text-primary transition-colors"
-      >
-        <span class="font-mono text-primary text-sm mr-2">05.</span>
-        {t('nav.blog')}
+    <div class="md:hidden flex items-center gap-2">
+      <a href={translatePath("/blog")} class="fx-btn px-3 py-2 text-xs">
+        {t("nav.blog")}
       </a>
-      
+
       <a
         href="https://drive.google.com/file/d/1DFqJojxnrsncCsbQzq4sEhvjJlFS6m7C/view?usp=drive_link"
         target="_blank"
         rel="noopener noreferrer"
-        class="fx-btn fx-btn--ghost mt-4 px-6 py-3 text-sm"
+        class="fx-btn fx-btn--ghost px-3 py-2 text-xs"
       >
-        {t('nav.cv')}
+        {t("nav.cv")}
       </a>
+
+      <button
+        id="mobile-menu-btn"
+        class="text-foreground p-2 rounded-md border border-border bg-card/85"
+        aria-label="Open menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden fixed inset-0 z-70 bg-background"
+  >
+    <div class="relative flex min-h-dvh items-center justify-center px-5 py-8">
+      <div
+        class="relative w-full max-w-sm rounded-2xl border border-primary/30 bg-card p-6 shadow-[0_24px_80px_rgba(2,10,24,0.85)]"
+      >
+        <button
+          id="close-menu-btn"
+          class="absolute top-4 right-4 rounded-lg border border-border bg-background p-2 text-foreground hover:text-primary hover:border-primary/50 transition-colors"
+          aria-label={t("nav.closeMenu")}
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <p
+          class="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-primary/90"
+        >
+          Navigation
+        </p>
+        <div class="flex flex-col gap-3">
+          {
+            navItems.map((item, index) => (
+              <a
+                href={`${translatePath("/")}${item.href}`}
+                class="mobile-nav-link flex w-full items-center rounded-xl border border-border bg-background px-4 py-3.5 text-lg font-semibold text-foreground transition-all duration-300 hover:border-primary/55 hover:bg-primary/12 hover:text-primary"
+              >
+                <span class="mr-3 inline-flex min-w-10 justify-center rounded-md border border-primary/35 bg-primary/10 py-1 font-mono text-xs text-primary">
+                  0{index + 1}
+                </span>
+                {t(item.key as any)}
+              </a>
+            ))
+          }
+        </div>
+      </div>
     </div>
   </div>
 </header>
 
 <script>
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const closeMenuBtn = document.getElementById('close-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-  
-  mobileMenuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  });
-  
-  closeMenuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.add('hidden');
-    document.body.style.overflow = '';
-  });
-  
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const closeMenuBtn = document.getElementById("close-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+  let savedScrollY = 0;
+
+  const lockPageScroll = () => {
+    savedScrollY = window.scrollY;
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+  };
+
+  const unlockPageScroll = () => {
+    document.documentElement.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
+    window.scrollTo(0, savedScrollY);
+  };
+
+  const openMenu = () => {
+    mobileMenu?.classList.remove("hidden");
+    lockPageScroll();
+  };
+
+  const closeMenu = () => {
+    mobileMenu?.classList.add("hidden");
+    unlockPageScroll();
+  };
+
+  mobileMenuBtn?.addEventListener("click", openMenu);
+
+  closeMenuBtn?.addEventListener("click", closeMenu);
+
   mobileNavLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      mobileMenu?.classList.add('hidden');
-      document.body.style.overflow = '';
+    link.addEventListener("click", () => {
+      closeMenu();
     });
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (
+      event.key === "Escape" &&
+      mobileMenu &&
+      !mobileMenu.classList.contains("hidden")
+    ) {
+      closeMenu();
+    }
   });
 </script>
