@@ -33,6 +33,15 @@ export const ui = {
     // Páginas
     "blog.readMore": "Leer más",
     "blog.publishedOn": "Publicado el",
+    "blog.home.eyebrow": "Bitácora digital",
+    "blog.home.heading": "Historias, apuntes y cosas que aprendo construyendo software.",
+    "blog.home.description": "Una colección de artículos sobre desarrollo web, backend, arquitectura y aprendizajes en proyectos reales.",
+    "blog.home.featured": "Artículo destacado",
+    "blog.home.latest": "Últimas publicaciones",
+    "blog.home.latestDescription": "Lecturas recientes del laboratorio personal.",
+    "blog.home.backHome": "Volver al inicio",
+    "blog.home.empty": "Todavía no hay artículos publicados en este idioma.",
+    "blog.home.emptyHint": "Pronto compartiré nuevas notas por aquí.",
 
     // About
     "about.title": "Sobre mí",
@@ -163,6 +172,15 @@ export const ui = {
     "home.hero": "Welcome to my portfolio",
     "blog.readMore": "Read more",
     "blog.publishedOn": "Published on",
+    "blog.home.eyebrow": "Digital notebook",
+    "blog.home.heading": "Stories, notes, and things I learn while building software.",
+    "blog.home.description": "A collection of articles about web development, backend, architecture, and lessons from real projects.",
+    "blog.home.featured": "Featured article",
+    "blog.home.latest": "Latest posts",
+    "blog.home.latestDescription": "Recent reads from my personal lab.",
+    "blog.home.backHome": "Back to home",
+    "blog.home.empty": "There are no published posts for this language yet.",
+    "blog.home.emptyHint": "I will share fresh notes here soon.",
 
     // About
     "about.title": "About me",
