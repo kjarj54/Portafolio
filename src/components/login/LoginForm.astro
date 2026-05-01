@@ -12,9 +12,6 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
-if(Astro.locals.session){
-  return Astro.redirect(translatePath("/dashboard"));
-}
 ---
 
 <form id="login-form" class="space-y-6">

@@ -9,6 +9,10 @@ import LoginForm from "@components/login/LoginForm.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
+
+if(Astro.locals.session){
+  return Astro.redirect(translatePath("/dashboard"));
+}
 ---
 
 <Layout title={t("login.title")} description={t("login.description")}>
