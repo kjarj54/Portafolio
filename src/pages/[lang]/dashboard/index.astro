@@ -1,0 +1,9 @@
+---
+if(!Astro.locals.session){
+  return Astro.redirect("/login");
+}
+
+const user = Astro.locals.user;
+---
+
+<h1>Bienvenido, {user?.name ?? "usuario"}</h1>

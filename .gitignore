@@ -25,3 +25,5 @@ pnpm-debug.log*
 .vscode
 # Local Netlify folder
 .netlify
+
+drizzle
