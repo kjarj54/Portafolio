@@ -1,6 +1,15 @@
 ---
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils";
+
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+
+
 if(!Astro.locals.session){
-  return Astro.redirect("/login");
+  return Astro.redirect(translatePath("/login"));
 }
 
 const user = Astro.locals.user;

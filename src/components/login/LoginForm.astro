@@ -11,10 +11,13 @@ import Button from "@components/shared/Button.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
-
 ---
 
-<form id="login-form" class="space-y-6">
+<form
+  id="login-form"
+  class="space-y-6"
+  data-callback={translatePath("/dashboard")}
+>
   <Input
     id="email"
     label={t("login.username")}
@@ -55,6 +58,40 @@ const translatePath = useTranslatedPath(lang);
 </form>
 
 <script>
+  const loginForm = document.getElementById("login-form");
+
+  loginForm?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = (document.getElementById("email") as HTMLInputElement).value;
+    const password = (document.getElementById("password") as HTMLInputElement)
+      .value;
+
+    const callbackURL = loginForm?.dataset.callback;
+    const response = await fetch("/api/auth/sign-in/email", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ email, password, callbackURL }),
+      credentials: "same-origin",
+    });
+
+    if (!response.ok) {
+      let errorMessage = "Login failed";
+      try {
+        const payload = await response.json();
+        errorMessage = payload?.message ?? errorMessage;
+      } catch {
+        // Keep default message when API does not return JSON.
+        
+      }
+      console.error("Login failed:", errorMessage);
+      return;
+    }
+
+    window.location.assign(callbackURL ?? "/dashboard");
+  });
+
   const helloThereLink = document.getElementById("hello-there-link");
   const helloThereVideo = document.getElementById(
     "hello-there-gif",
