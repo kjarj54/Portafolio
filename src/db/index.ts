@@ -1,5 +1,5 @@
 import { drizzle } from 'drizzle-orm/libsql';
-import { createClient } from '@libsql/client/web';
+import { createClient } from '@libsql/client';
 
 const client = createClient({
   url: import.meta.env.TURSO_DATABASE_URL,

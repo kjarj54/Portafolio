@@ -10,6 +10,7 @@
       "@components/*": ["./src/components/*"],
       "@landing/*": ["./src/components/landingpage/*"],
       "@assets/*": ["./src/assets/*"],
+      "@db/*": ["./src/db/*"]
     }
   }
 }
