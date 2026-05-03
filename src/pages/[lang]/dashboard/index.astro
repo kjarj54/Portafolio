@@ -13,6 +13,8 @@ if(!Astro.locals.session){
 }
 
 const user = Astro.locals.user;
+
+export const prerender = false;
 ---
 
 <h1>Bienvenido, {user?.name ?? "usuario"}</h1>
